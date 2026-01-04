@@ -1,4 +1,3 @@
-
 {
   "name": "byamn-festhub",
   "version": "1.0.0",
@@ -8,13 +7,13 @@
     "start": "npx http-server -p 8000 -c-1",
     "dev": "npx http-server -p 3000 -c-1 -o",
     "serve": "python -m http.server 8000",
-    "lint": "echo 'Linting HTML, CSS, and JS files...'",
-    "test": "echo 'No tests specified yet'",
-    "build": "echo 'No build process required for static site'"
+    "lint": "echo \"Linting HTML, CSS, and JS files...\"",
+    "test": "echo \"No tests specified yet\"",
+    "build": "echo \"No build process required for static site\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/byamn-festhub.git"
+    "url": "git+https://github.com/Neha-codeX/BYAMN-Festhub.git"
   },
   "keywords": [
     "festival",
@@ -35,9 +34,9 @@
   "author": "BYAMN Festhub Team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/byamn-festhub/issues"
+    "url": "https://github.com/Neha-codeX/BYAMN-Festhub/issues"
   },
-  "homepage": "https://github.com/yourusername/byamn-festhub#readme",
+  "homepage": "https://github.com/Neha-codeX/BYAMN-Festhub#readme",
   "devDependencies": {
     "http-server": "^14.1.1"
   },
@@ -50,57 +49,5 @@
     "not dead",
     "not ie 11"
   ]
-{
-  "name": "byamn-festhub",
-  "version": "1.0.0",
-  "description": "Create & Share Beautiful Festival Greeting Cards for All Occasions",
-  "main": "index.html",
-  "scripts": {
-    "start": "npx http-server -p 8000 -c-1",
-    "dev": "npx http-server -p 3000 -c-1 -o",
-    "serve": "python -m http.server 8000",
-    "lint": "echo 'Linting HTML, CSS, and JS files...'",
-    "test": "echo 'No tests specified yet'",
-    "build": "echo 'No build process required for static site'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yourusername/byamn-festhub.git"
-  },
-  "keywords": [
-    "festival",
-    "greeting-cards",
-    "christmas",
-    "janmashtami",
-    "diwali",
-    "eid",
-    "celebrations",
-    "web-app",
-    "static-site",
-    "html",
-    "css",
-    "javascript",
-    "responsive",
-    "mobile-friendly"
-  ],
-  "author": "BYAMN Festhub Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yourusername/byamn-festhub/issues"
-  },
-  "homepage": "https://github.com/yourusername/byamn-festhub#readme",
-  "devDependencies": {
-    "http-server": "^14.1.1"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
-
 }
 
