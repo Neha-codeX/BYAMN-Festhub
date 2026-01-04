@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Tangerine:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/festival.css">
     <style>
         :root {
             --primary: #4a148c;
@@ -14,466 +15,6 @@
             --accent: #ff6d00;
             --light: #f3e5f5;
             --dark: #12005e;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
-            min-height: 100vh;
-            color: var(--dark);
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        header {
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 5%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 10;
-        }
-        
-        header h1 {
-            font-family: 'Tangerine', cursive;
-            font-size: 42px;
-            background: linear-gradient(90deg, var(--accent), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .btn-create {
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 4px 15px rgba(74, 20, 140, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-create:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(74, 20, 140, 0.4);
-        }
-        
-        .btn-create i {
-            font-size: 16px;
-        }
-        
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
-            perspective: 1000px;
-        }
-        
-       
-        
-        .form-box, .greeting-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            width: 100%;
-            max-width: 500px;
-            padding: 30px;
-            transform-style: preserve-3d;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .form-box {
-            transform: rotateY(0deg);
-        }
-        
-        .form-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, rgba(255,215,0,0) 70%);
-            z-index: -1;
-        }
-        
-        .greeting-card {
-            transform: rotateY(0deg);
-            display: none;
-        }
-        
-        .greeting-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-        }
-        
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-            margin-bottom: 25px;
-            font-size: 28px;
-            text-align: center;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            border-radius: 3px;
-        }
-        
-        .input-group {
-            position: relative;
-            margin-bottom: 25px;
-        }
-        
-        input {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 12px;
-            border: 2px solid #e0e0e0;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            background: rgba(255,255,255,0.8);
-        }
-        
-        input:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 5px 15px rgba(255, 171, 0, 0.2);
-        }
-        
-        label {
-            position: absolute;
-            left: 20px;
-            top: 15px;
-            color: #999;
-            transition: all 0.3s ease;
-            pointer-events: none;
-            background: white;
-            padding: 0 5px;
-        }
-        
-        input:focus + label, input:not(:placeholder-shown) + label {
-            top: -10px;
-            left: 15px;
-            font-size: 12px;
-            color: var(--primary);
-        }
-        
-        .btn-generate {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            border: none;
-            padding: 15px;
-            color: white;
-            border-radius: 12px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(255, 171, 0, 0.4);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .btn-generate:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(255, 171, 0, 0.5);
-        }
-        
-        .greeting-image {
-            width: 100%;
-            height: 250px;
-            border-radius: 15px;
-            object-fit: cover;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .greeting-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .greeting-text {
-            font-size: 20px;
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            text-align: center;
-            font-weight: 500;
-            padding: 0 10px;
-            font-family: 'Kalam', cursive;
-        }
-        
-        .sender-name {
-            color: var(--primary);
-            font-weight: 700;
-            font-family: 'Tangerine', cursive;
-            font-size: 36px;
-            margin: 20px 0 10px;
-            text-align: center;
-        }
-        
-        .hindi-wish {
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
-            color: var(--dark);
-            margin: 20px 0;
-            font-weight: 600;
-            text-align: center;
-            line-height: 1.5;
-        }
-        
-        .action-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-        
-        .action-btn {
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
-        
-        .btn-share {
-            background: linear-gradient(135deg, var(--primary), #7b1fa2);
-            color: white;
-            box-shadow: 0 4px 15px rgba(74, 20, 140, 0.3);
-        }
-        
-        .btn-new {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-3px);
-        }
-        
-        .btn-share:hover {
-            box-shadow: 0 7px 20px rgba(74, 20, 140, 0.4);
-        }
-        
-        .btn-new:hover {
-            box-shadow: 0 7px 20px rgba(0,0,0,0.1);
-        }
-        
-        .floating-decor {
-            position: absolute;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        
-        .decor-1 {
-            top: 10%;
-            left: 5%;
-            font-size: 100px;
-            color: var(--primary);
-        }
-        
-        .decor-2 {
-            bottom: 15%;
-            right: 5%;
-            font-size: 120px;
-            color: var(--accent);
-        }
-        
-        .share-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        
-        .share-modal.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        
-        .share-content {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 500px;
-            width: 90%;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .share-modal.active .share-content {
-            transform: translateY(0);
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #999;
-            transition: all 0.3s ease;
-        }
-        
-        .close-modal:hover {
-            color: var(--accent);
-            transform: rotate(90deg);
-        }
-        
-        .share-options {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-        
-        .share-option {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .share-option:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-        
-        .whatsapp { background: #25D366; }
-        .facebook { background: #3b5998; }
-        .twitter { background: #1DA1F2; }
-        .copy-link { background: var(--primary); }
-        
-        .share-url {
-            margin-top: 20px;
-            display: flex;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .share-url input {
-            flex: 1;
-            border: none;
-            padding: 12px 15px;
-            background: #f9f9f9;
-        }
-        
-        .share-url button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0 15px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .share-url button:hover {
-            background: var(--dark);
-        }
-        
-        
-        
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 36px;
-            }
-            
-            .btn-create {
-                padding: 8px 15px;
-                font-size: 13px;
-            }
-            
-            .form-box, .greeting-card {
-                padding: 25px 20px;
-            }
-            
-            h2 {
-                font-size: 24px;
-            }
-            
-            .greeting-image {
-                height: 200px;
-            }
-            
-            .greeting-text {
-                font-size: 18px;
-            }
-            
-            .sender-name {
-                font-size: 32px;
-            }
-            
-            .hindi-wish {
-                font-size: 16px;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -495,103 +36,50 @@
         </div>
 
         <div class="share-modal" id="shareModal">
-        <div class="share-content">
-            <div class="close-modal" id="closeModal">
-                <i class="fas fa-times"></i>
-            </div>
-            <h2>Share Your Greeting</h2>
-            <p>Spread the festive joy with your friends and family!</p>
-            
-            <div class="share-options">
-                <div class="share-option whatsapp" id="whatsappShare">
-                    <i class="fab fa-whatsapp"></i>
+            <div class="share-content">
+                <div class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
                 </div>
-                <div class="share-option facebook" id="facebookShare">
-                    <i class="fab fa-facebook-f"></i>
+                <h2>Share Your Greeting</h2>
+                <p>Spread the festive joy with your friends and family!</p>
+                
+                <div class="share-options">
+                    <div class="share-option whatsapp" id="whatsappShare">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="share-option facebook" id="facebookShare">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="share-option twitter" id="twitterShare">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="share-option copy-link" id="copyLink">
+                        <i class="fas fa-copy"></i>
+                    </div>
                 </div>
-                <div class="share-option twitter" id="twitterShare">
-                    <i class="fab fa-twitter"></i>
+                
+                <div class="share-url">
+                    <input type="text" id="shareUrlInput" readonly>
+                    <button id="copyUrlBtn">Copy</button>
                 </div>
-                <div class="share-option copy-link" id="copyLink">
-                    <i class="fas fa-copy"></i>
-                </div>
-            </div>
-            
-            <div class="share-url">
-                <input type="text" id="shareUrlInput" readonly>
-                <button id="copyUrlBtn">Copy</button>
             </div>
         </div>
-    </div>
         
         <!-- Ad Placeholder 1 -->
-      <div class="responsive-ad">
-    <div class="ad-wrapper">
-        <script type="text/javascript">
-            atOptions = {
-                'key': '4ce295f652d4e4cae3fba30855200151',
-                'format': 'iframe',
-                'height': 80,
-                'width': 480,
-                'params': {}
-            };
-        </script>
-        <script type="text/javascript" src="//aweresolve.com/4ce295f652d4e4cae3fba30855200151/invoke.js"></script>
-    </div>
-</div>
-
-<style>
-    /* Main responsive container */
-    .responsive-ad {
-        width: 100%;
-        margin: 20px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Ad wrapper with max-width */
-    .ad-wrapper {
-        width: 100%;
-        max-width: 468px; /* Original ad width */
-        position: relative;
-        overflow: hidden;
-        border-radius: 4px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    /* Iframe styling */
-    .ad-wrapper iframe {
-        width: 100% !important;
-        height: 60px !important;
-        border: none;
-        display: block;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 500px) {
-        .ad-wrapper {
-            max-width: 100%;
-            padding: 0 10px;
-        }
-        .ad-wrapper iframe {
-            height: 50px !important;
-            transform: scale(1);
-            transform-origin: center;
-        }
-    }
-
-    /* Tablet responsiveness */
-    @media (min-width: 501px) and (max-width: 768px) {
-        .ad-wrapper {
-            max-width: 80%;
-        }
-    }
-</style>     
-
-
-
-        
+        <div class="responsive-ad">
+            <div class="ad-wrapper">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key': '4ce295f652d4e4cae3fba30855200151',
+                        'format': 'iframe',
+                        'height': 80,
+                        'width': 480,
+                        'params': {}
+                    };
+                </script>
+                <script type="text/javascript" src="//aweresolve.com/4ce295f652d4e4cae3fba30855200151/invoke.js"></script>
+            </div>
+        </div>
         
         <div class="form-box" id="formBox">
             <h2>Create Your Greeting</h2>
@@ -603,7 +91,6 @@
                 Generate Greeting
             </button>
         </div>
-        
         
         <div class="greeting-card" id="greetingCard">
             <h2>Happy Janmashtami</h2>
@@ -625,247 +112,34 @@
             </div>
         </div>
 
-
         <!-- Ad Placeholder 2 -->
         <div class="ad-placeholder">
-<script async="async" data-cfasync="false" src="//aweresolve.com/5f30fff3bb556620e90e0610b7982216/invoke.js"></script>
-<div id="container-5f30fff3bb556620e90e0610b7982216"></div>
+            <script async="async" data-cfasync="false" src="//aweresolve.com/5f30fff3bb556620e90e0610b7982216/invoke.js"></script>
+            <div id="container-5f30fff3bb556620e90e0610b7982216"></div>
         </div>
         
+        <footer>
+            <div class="footer-content">
+                <p class="copyright">© 2025 Janmashtami Greetings. All Rights Reserved.</p>
+            </div>
+        </footer>
     
-      <footer>
-    <div class="footer-content">
-        <p class="copyright">© 2025 Janmashtami Greetings. All Rights Reserved.</p>
-    </div>
-</footer>
-
-<style>
-    footer {
-        background: linear-gradient(135deg, #f5d142, #ff7e5f);
-        color: white;
-        text-align: center;
-        padding: 15px 0;
-        font-family: 'Poppins', sans-serif;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .copyright {
-        margin: 0;
-        font-size: 14px;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-    }
-
-    .copyright:hover {
-        color: #fffbe7;
-        transform: scale(1.03);
-    }
-</style>
-    
-    
-    
-<script>
-    const images = [
-        "https://indiater.com/wp-content/uploads/2018/09/Free-Happy-Janmashtami-Greeting-Card-With-Hindi-Quote.jpg",
-        "https://www.giboxonline.com/cdn/shop/articles/Janmashtami_Wishes_1100x.jpg?v=1695810985",
-        "https://media.assettype.com/bloombergquint%2F2023-09%2Fdfc6a9fc-b5fb-4405-ab9d-faf3d78aab09%2FJD_2.png?w=400",
-        "https://media.assettype.com/bloombergquint%2F2023-09%2Feb98f699-8472-4e38-b96e-8ee5efe5e92a%2FJanmashtami_2.gif?w=400",
-        "https://media.assettype.com/bloombergquint%2F2023-09%2F129e509e-d687-4fa6-9f29-87de1f9a3030%2FJanmashtami_3.gif?w=400",
-        "https://imgk.timesnownews.com/media/Happy_Janmashtami_2021_quotes.jpg",
-        "https://imgk.timesnownews.com/media/Happy_Janmashtami_2021_images.jpg",
-        "https://imgk.timesnownews.com/media/Happy_Janmashtani_wishes.jpg",
-        "https://imgk.timesnownews.com/media/Happy_Janmashtami_2021_wishes_and_images.jpg",
-        "https://cdn.shopify.com/s/files/1/0525/5285/9819/files/2_4642c91c-a1c4-400b-9672-6a5d095b7fe0_600x600.png?v=1752066148",
-        "https://cdn.shopify.com/s/files/1/0525/5285/9819/files/5_49b29f54-88ed-4ece-820e-9c102f83f9fa_600x600.png?v=1752066148",
-        "https://cdn.shopify.com/s/files/1/0525/5285/9819/files/8_8df4b200-a68b-4a2c-adbf-150d3dcea2b8_600x600.jpg?v=1752066148",
-        "https://cdn.shopify.com/s/files/1/0525/5285/9819/files/11_11443bc8-5802-41e0-86c6-d82c3558305e_600x600.jpg?v=1752067029",
-        "https://cdn.shopify.com/s/files/1/0525/5285/9819/files/12_28ea4082-34e1-4659-82da-f4a1922db42e_600x600.jpg?v=1752067029",
-        "https://cdn.shopify.com/s/files/1/0525/5285/9819/files/Happy_Janmashtami_1024x1024.gif?v=1753790153",
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdribbble.com%2Fshots%2F16340832-Janmashtami&psig=AOvVaw0xr43RH6n0JimOprPWYZ7u&ust=1754894984257000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKj06brT_44DFQAAAAAdAAAAABAT"
-    ];
-
-
-        const wishes = [
-            "May Lord Krishna fill your life with love, happiness, and prosperity.",
-            "On this auspicious occasion, may Lord Krishna bless you with wisdom and success.",
-            "May the divine blessings of Lord Krishna bring you peace and joy.",
-            "Let's celebrate the birth of Lord Krishna with joy and devotion.",
-            "May the flute of Lord Krishna fill your life with melody of love.",
-            "May Lord Krishna steal all your worries and bless you with happiness."
+    <script>
+        const images = [
+            "images/Janmashtami.jpg"
         ];
 
-        // DOM Elements
-        const formBox = document.getElementById('formBox');
-        const greetingCard = document.getElementById('greetingCard');
-        const createBtn = document.getElementById('createBtn');
-        const generateBtn = document.getElementById('generateBtn');
-        const newCardBtn = document.getElementById('newCardBtn');
-        const shareBtn = document.getElementById('shareBtn');
-        const shareModal = document.getElementById('shareModal');
-        const closeModal = document.getElementById('closeModal');
-        const whatsappShare = document.getElementById('whatsappShare');
-        const facebookShare = document.getElementById('facebookShare');
-        const twitterShare = document.getElementById('twitterShare');
-        const copyLink = document.getElementById('copyLink');
-        const shareUrlInput = document.getElementById('shareUrlInput');
-        const copyUrlBtn = document.getElementById('copyUrlBtn');
-        const nameInput = document.getElementById('nameInput');
-        const greetingImage = document.getElementById('greetingImage');
-        const senderName = document.getElementById('senderName');
-        const randomWish = document.getElementById('randomWish');
-
-        let currentShareUrl = '';
-
-        // Get random image
-        function getRandomImage() {
-            return images[Math.floor(Math.random() * images.length)];
-        }
-
-        // Get random wish
-        function getRandomWish() {
-            return wishes[Math.floor(Math.random() * wishes.length)];
-        }
-
-        // Generate greeting
-        function generateGreeting() {
-            const name = nameInput.value.trim();
-            if (!name) {
-                alert("Please enter your name!");
-                nameInput.focus();
-                return;
-            }
-            
-            // Animate form out
-            formBox.style.transform = 'rotateY(90deg)';
-            formBox.style.opacity = '0';
-            
-            setTimeout(() => {
-                formBox.style.display = 'none';
-                
-                // Set greeting content
-                greetingImage.src = getRandomImage();
-                randomWish.textContent = getRandomWish();
-                senderName.textContent = `- ${name}`;
-                
-                // Generate share URL
-                currentShareUrl = `${window.location.origin}${window.location.pathname}?name=${encodeURIComponent(name)}`;
-                shareUrlInput.value = currentShareUrl;
-                
-                // Animate greeting in
-                greetingCard.style.display = 'block';
-                setTimeout(() => {
-                    greetingCard.style.transform = 'rotateY(0deg)';
-                    greetingCard.style.opacity = '1';
-                }, 10);
-            }, 500);
-        }
-
-        // Show form
-        function showForm() {
-            // Animate greeting out
-            greetingCard.style.transform = 'rotateY(90deg)';
-            greetingCard.style.opacity = '0';
-            
-            setTimeout(() => {
-                greetingCard.style.display = 'none';
-                
-                // Reset form
-                nameInput.value = '';
-                
-                // Animate form in
-                formBox.style.display = 'block';
-                setTimeout(() => {
-                    formBox.style.transform = 'rotateY(0deg)';
-                    formBox.style.opacity = '1';
-                    nameInput.focus();
-                }, 10);
-            }, 500);
-        }
-
-        // Show share modal
-        function showShareModal() {
-            shareModal.classList.add('active');
-        }
-
-        // Close share modal
-        function closeShareModal() {
-            shareModal.classList.remove('active');
-        }
-
-        // Copy URL to clipboard
-        function copyToClipboard() {
-            shareUrlInput.select();
-            document.execCommand('copy');
-            
-            // Change button text temporarily
-            copyUrlBtn.textContent = 'Copied!';
-            setTimeout(() => {
-                copyUrlBtn.textContent = 'Copy';
-            }, 2000);
-        }
-
-        // Share via social media
-        function shareViaSocial(platform) {
-            let shareUrl = '';
-            const text = 'Check out this beautiful Janmashtami greeting made for you!';
-            
-            switch(platform) {
-                case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + currentShareUrl)}`;
-                    break;
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentShareUrl)}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(currentShareUrl)}`;
-                    break;
-            }
-            
-            window.open(shareUrl, '_blank', 'width=600,height=400');
-        }
-
-        // Check for name in URL on load
-        function checkForNameInUrl() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const nameFromUrl = urlParams.get('name');
-            
-            if (nameFromUrl) {
-                nameInput.value = nameFromUrl;
-                generateGreeting();
-            }
-        }
-
-        // Event Listeners
-        generateBtn.addEventListener('click', generateGreeting);
-        createBtn.addEventListener('click', showForm);
-        newCardBtn.addEventListener('click', showForm);
-        shareBtn.addEventListener('click', showShareModal);
-        closeModal.addEventListener('click', closeShareModal);
-        copyUrlBtn.addEventListener('click', copyToClipboard);
-        copyLink.addEventListener('click', copyToClipboard);
-        
-        whatsappShare.addEventListener('click', () => shareViaSocial('whatsapp'));
-        facebookShare.addEventListener('click', () => shareViaSocial('facebook'));
-        twitterShare.addEventListener('click', () => shareViaSocial('twitter'));
-
-        // Close modal when clicking outside
-        shareModal.addEventListener('click', (e) => {
-            if (e.target === shareModal) {
-                closeShareModal();
-            }
-        });
-
-        // Initialize
-        checkForNameInUrl();
+        const wishes = [
+            "May Lord Krishna steal all your tensions and worries on this Janmashtami! And give you all the love, peace and happiness! Happy Janmashtami!",
+            "May Lord Krishna come to your house and take away all your Makhan - Mishri with all your worries and sorrows. Happy Janmashtami!",
+            "May the Natkhat Nandlala always make your life colorful with lively pranks that keep you on your toes and instills and evokes child-like traits in you, at all times.",
+            "I am praying for you and I know he is listening May Makhanchor steal your worries and leave you peace and happiness on this holy occasion of Krishna Janmashtami!",
+            "May the festival of Janmashtami bring you joy, peace, and love. Happy Krishna Janmashtami!",
+            "Celebrate the birth of Lord Krishna who enchants everyone with his playful mischiefs. Have a happy and blessed Krishna Janmashtami!",
+            "May the flute of Lord Krishna guide your path towards an eternal joy and secure you with the melody of love. Happy Janmashtami!",
+            "May Lord Krishna shower his blessings on you, and may every Janmashtami bring lots of happiness for you and your family. Happy Krishna Janmashtami!"
+        ];
     </script>
+    <script src="js/festival.js"></script>
 </body>
 </html>

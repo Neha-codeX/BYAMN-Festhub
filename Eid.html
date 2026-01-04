@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merry Christmas</title>
+    <title>Eid Mubarak</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Tangerine:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/festival.css">
     <style>
         :root {
-            --primary: #0a5c36;
-            --secondary: #d62828;
-            --accent: #f77f00;
-            --light: #f8f9fa;
-            --dark: #1a1a1a;
+            --primary: #27ae60;
+            --secondary: #2ecc71;
+            --accent: #f1c40f;
+            --light: #e8f8f5;
+            --dark: #145a32;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Merry Christmas</h1>
+        <h1>Eid Mubarak</h1>
         <button class="btn-create" id="createBtn">
             <i class="fas fa-plus"></i> Create
         </button>
@@ -29,10 +29,10 @@
 
     <div class="main-content">
         <div class="floating-decor decor-1">
-            <i class="fas fa-tree"></i>
+            <i class="fas fa-moon"></i>
         </div>
         <div class="floating-decor decor-2">
-            <i class="fas fa-snowflake"></i>
+            <i class="fas fa-star"></i>
         </div>
 
         <div class="share-modal" id="shareModal">
@@ -41,7 +41,7 @@
                     <i class="fas fa-times"></i>
                 </div>
                 <h2>Share Your Greeting</h2>
-                <p>Spread the Christmas joy with your friends and family!</p>
+                <p>Spread the Eid joy with your friends and family!</p>
                 
                 <div class="share-options">
                     <div class="share-option whatsapp" id="whatsappShare">
@@ -93,14 +93,14 @@
         </div>
         
         <div class="greeting-card" id="greetingCard">
-            <h2>Merry Christmas</h2>
-            <img class="greeting-image" id="greetingImage" src="" alt="Christmas Image">
+            <h2>Eid Mubarak</h2>
+            <img class="greeting-image" id="greetingImage" src="" alt="Eid Image">
             
             <p class="greeting-text" id="randomWish"></p>
             
             <div class="sender-name" id="senderName"></div>
             
-            <p class="christmas-wish">Wishing you a Christmas filled with love, joy, and peace!</p>
+            <p class="eid-wish">Wishing you and your family a blessed and joyous Eid!</p>
             
             <div class="action-btns">
                 <a href="#" class="action-btn btn-share" id="shareBtn">
@@ -120,27 +120,26 @@
         
         <footer>
             <div class="footer-content">
-                <p class="copyright">© 2025 Christmas Greetings. All Rights Reserved.</p>
+                <p class="copyright">© 2025 Eid Greetings. All Rights Reserved.</p>
             </div>
         </footer>
     
     <script>
         const images = [
-            "images/Christmas.jpg"
+            "images/Eid.jpg"
         ];
 
         const wishes = [
-            "May your Christmas be filled with the true miracles and meaning of this beautiful time.",
-            "May the joy and peace of Christmas be with you all through the Year. Wishing you a season of blessings from heaven above. Happy Christmas!!",
-            "May the Christmas Season bring only happiness and joy to you and your adorable family. We miss you and hope to see you in 2024.",
-            "Praying you have a wonderful Christmas filled with moments you’ll always remember.",
-            "May God bless you with the gift of love and the gift of peace not just on Christmas, but for the entire year!",
-            "Count your blessings, sing your Christmas carols, open your gifts, and make a wish under the Christmas tree. May you have a Merry Christmas!",
-            "There are many gifts under the Christmas tree, but the best one is you!",
-            "May the melody and spirit of the holidays fill your home with love and peace. I wish you all the best and happy New Year too!",
-            "In this loveliest and happiest of seasons, may you find many reasons to celebrate. Have a wonderful Christmas!",
-            "A Christmas candle is a lovely thing; It makes no noise at all, But softly gives itself away; While quite unselfish, it grows small.",
-            "May the good times and treasures of the present become the golden memories of tomorrow. Wishing you lots of love, joy and happiness. MERRY CHRISTMAS"
+            "May the magic of this Eid bring lots of happiness in your life and may you celebrate it with all your close friends and may it fill your heart with wonders. Eid Mubarak!",
+            "May Allah flood your life with happiness on this occasion, your heart with love, your soul with spiritual, your mind with wisdom, wishing you a very Happy Eid.",
+            "May the joy of Eid be with you for the rest of your life. May all your desires be fulfilled by the grace of Allah. Happy Eid!",
+            "Sending you warm wishes on Eid and wishing that it brings your way ever joys and happiness. Remember me in your prayers.",
+            "In every shared smile and laughter; In every silent prayer answered; In every opportunity that comes your way – may Allah bless you immensely! Eid Mubarak",
+            "May this special day bring peace, happiness and prosperity to everyone. Eid Mubarak!",
+            "May Allah bless you in all your endeavors and lead you to the path of continued success and prosperity. Eid Mubarak!",
+            "May the divine blessings of Allah bring you hope, faith, and joy on Eid-ul-Adha and forever. Happy Eid Adha!",
+            "May Allah's blessings be with you today, tomorrow and always. Eid Mubarak!",
+            "Wishing you a very Happy Eid! May Allah accept your good deeds, forgive your transgressions and ease the suffering of all peoples around the globe."
         ];
     </script>
     <script src="js/festival.js"></script>
