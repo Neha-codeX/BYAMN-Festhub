@@ -1,0 +1,556 @@
+:root {
+    /* These variables should be overridden in the specific festival HTML file */
+    --primary: #d35400;
+    --secondary: #c0392b;
+    --accent: #f1c40f;
+    --light: #fff3e0;
+    --dark: #4a1c03;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--light), #ffe0b2);
+    min-height: 100vh;
+    color: var(--dark);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 42px;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-create {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-home {
+    background: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-home:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-create:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211, 84, 0, 0.4);
+}
+
+.btn-create i {
+    font-size: 16px;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    perspective: 1000px;
+}
+
+.form-box, .greeting-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-box {
+    transform: rotateY(0deg);
+}
+
+.form-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.greeting-card {
+    transform: rotateY(0deg);
+    display: none;
+}
+
+.greeting-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+    border-radius: 3px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.8);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 5px 15px rgba(192, 57, 43, 0.2);
+}
+
+label {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    color: #999;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: white;
+    padding: 0 5px;
+}
+
+input:focus + label, input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 15px;
+    font-size: 12px;
+    color: var(--primary);
+}
+
+.btn-generate {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    border: none;
+    padding: 15px;
+    color: white;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-generate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(192, 57, 43, 0.5);
+}
+
+.greeting-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.greeting-image:hover {
+    transform: scale(1.02);
+}
+
+.greeting-text {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+    padding: 0 10px;
+    font-family: 'Kalam', cursive;
+}
+
+.sender-name {
+    color: var(--primary);
+    font-weight: 700;
+    font-family: 'Tangerine', cursive;
+    font-size: 36px;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+.festival-wish {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: var(--dark);
+    margin: 20px 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.action-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.action-btn {
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-share {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
+}
+
+.btn-new {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-share:hover {
+    box-shadow: 0 7px 20px rgba(211, 84, 0, 0.4);
+}
+
+.btn-new:hover {
+    box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+}
+
+.floating-decor {
+    position: absolute;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.decor-1 {
+    top: 10%;
+    left: 5%;
+    font-size: 100px;
+    color: var(--primary);
+}
+
+.decor-2 {
+    bottom: 15%;
+    right: 5%;
+    font-size: 120px;
+    color: var(--accent);
+}
+
+.share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.share-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.share-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.share-modal.active .share-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--accent);
+    transform: rotate(90deg);
+}
+
+.share-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.share-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.share-option:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.whatsapp { background: #25D366; }
+.facebook { background: #3b5998; }
+.twitter { background: #1DA1F2; }
+.copy-link { background: var(--primary); }
+
+.share-url {
+    margin-top: 20px;
+    display: flex;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.share-url input {
+    flex: 1;
+    border: none;
+    padding: 12px 15px;
+    background: #f9f9f9;
+}
+
+.share-url button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.share-url button:hover {
+    background: var(--dark);
+}
+
+/* Ad Styles */
+.responsive-ad {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-wrapper {
+    width: 100%;
+    max-width: 468px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ad-wrapper iframe {
+    width: 100% !important;
+    height: 60px !important;
+    border: none;
+    display: block;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.copyright:hover {
+    color: #fffbe7;
+    transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 36px;
+    }
+    
+    .btn-create {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    .form-box, .greeting-card {
+        padding: 25px 20px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    .greeting-image {
+        height: 200px;
+    }
+    
+    .greeting-text {
+        font-size: 18px;
+    }
+    
+    .sender-name {
+        font-size: 32px;
+    }
+    
+    .festival-wish {
+        font-size: 16px;
+    }
+    
+    .ad-wrapper {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .ad-wrapper iframe {
+        height: 50px !important;
+        transform: scale(1);
+        transform-origin: center;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+    .ad-wrapper {
+        max-width: 80%;
+    }
+}
