@@ -1,201 +1,85 @@
 <!DOCTYPE html>
-<!-- 
-  Redirect page - Shows ads and counts down before redirecting
-  Requires 'url' query parameter with encoded target URL
-  Host with index.html in same directory
--->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    .header {
-      background: white;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      text-align: center;
-      margin-bottom: 30px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .countdown-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 30px;
-      max-width: 500px;
-      margin: 0 auto 30px;
-      text-align: center;
-    }
-    .countdown {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #ff4444;
-      margin: 10px 0;
-    }
-    .progress-bar {
-      height: 5px;
-      background: #eee;
-      border-radius: 5px;
-      margin-top: 20px;
-      overflow: hidden;
-    }
-    .progress {
-      height: 100%;
-      background: #4a6bff;
-      width: 0%;
-      transition: width 0.3s;
-    }
-    .skip-btn {
-      display: inline-block;
-      margin-top: 15px;
-      color: #4a6bff;
-      text-decoration: none;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    .skip-btn:hover {
-      text-decoration: underline;
-    }
-    .ad-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .ad-slot {
-      background: white;
-      border-radius: 5px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      min-height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .sticky-ad {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-    @media (max-width: 768px) {
-      .ad-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .manual-link {
+            margin-top: 1rem;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .manual-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <!-- Optional sticky header ad placeholder -->
-  </div>
+    <div class="loader"></div>
+    <div class="message">Redirecting you to the destination...</div>
+    <a id="manualLink" href="#" class="manual-link">Click here if you are not redirected</a>
+    <a href="index.html" class="home-link" style="margin-top: 2rem; color: #6b7280; text-decoration: none; font-size: 0.9rem;">Back to Home</a>
 
-  <div class="countdown-card">
-    <h1>Redirecting to your link...</h1>
-    <div class="countdown" id="countdown">10</div>
-    <div class="progress-bar">
-      <div class="progress" id="progress"></div>
-    </div>
-    <a class="skip-btn" id="skip">Skip now</a>
-  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const targetUrl = params.get('url');
+            const manualLink = document.getElementById('manualLink');
 
-  <div class="ad-grid" id="adGrid"></div>
-
-  <div class="sticky-ad">
-    <!-- Optional sticky footer ad placeholder -->
-  </div>
-
-  <script>
-    // Configuration
-    const CONFIG = {
-      countdownStart: 10,
-      countdownStep: 2.3, // seconds
-      totalAds: 20
-    };
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const encodedUrl = params.get('url');
-      let targetUrl = '';
-      
-      try {
-        if (encodedUrl) {
-          targetUrl = decodeURIComponent(encodedUrl);
-          // Basic validation
-          new URL(targetUrl);
-        } else {
-          throw new Error('No URL parameter');
-        }
-      } catch (e) {
-        document.body.innerHTML = '<div style="padding: 50px; text-align: center; font-size: 1.5rem;">❌ Error: No URL found!</div>';
-        return;
-      }
-      
-      // Set up countdown
-      const countdownEl = document.getElementById('countdown');
-      const progressEl = document.getElementById('progress');
-      const skipBtn = document.getElementById('skip');
-      let count = CONFIG.countdownStart;
-      const totalTime = CONFIG.countdownStart * CONFIG.countdownStep * 1000;
-      let startTime = Date.now();
-      
-      const countdownInterval = setInterval(() => {
-        count--;
-        countdownEl.textContent = count;
-        
-        // Update progress bar
-        const elapsed = Date.now() - startTime;
-        const progress = (elapsed / totalTime) * 100;
-        progressEl.style.width = `${Math.min(progress, 100)}%`;
-        
-        if (count <= 0) {
-          clearInterval(countdownInterval);
-          window.location.href = targetUrl;
-        }
-      }, CONFIG.countdownStep * 1000);
-      
-      // Skip button functionality
-      skipBtn.addEventListener('click', () => {
-        clearInterval(countdownInterval);
-        window.location.href = targetUrl;
-      });
-      
-      // Insert ads
-      const adGrid = document.getElementById('adGrid');
-      const baseId = '1b21a7aeb6541a8c010585f476d4919d';
-      
-      for (let i = 1; i <= CONFIG.totalAds; i++) {
-        const adSlot = document.createElement('div');
-        adSlot.className = 'ad-slot';
-        
-        const containerId = `container-${baseId}-${i}`;
-        adSlot.innerHTML = `<div id="${containerId}"></div>`;
-        
-        const script = document.createElement('script');
-        script.async = true;
-        script.dataset.cfasync = 'false';
-        script.src = `//breathinggeoff.com/${baseId}/invoke.js`;
-        
-        adSlot.appendChild(script);
-        adGrid.appendChild(adSlot);
-      }
-    });
-  </script>
+            if (targetUrl) {
+                try {
+                    // Validate URL protocol
+                    const url = new URL(decodeURIComponent(targetUrl));
+                    if (['http:', 'https:'].includes(url.protocol)) {
+                        manualLink.href = url.href;
+                        // Small delay to show the "Redirecting" page (optional, but good UX)
+                        setTimeout(() => {
+                            window.location.href = url.href;
+                        }, 1000);
+                    } else {
+                        throw new Error('Invalid protocol');
+                    }
+                } catch (e) {
+                    document.querySelector('.message').textContent = 'Invalid or unsafe URL provided.';
+                    document.querySelector('.loader').style.display = 'none';
+                    manualLink.style.display = 'none';
+                }
+            } else {
+                document.querySelector('.message').textContent = 'No destination URL specified.';
+                document.querySelector('.loader').style.display = 'none';
+                manualLink.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

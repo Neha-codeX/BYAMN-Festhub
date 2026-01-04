@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 # Contributing to BYAMN Festhub 🎉
+
 
 Thank you for your interest in contributing to BYAMN Festhub! We welcome contributions from everyone and are grateful for even the smallest fixes.
 
