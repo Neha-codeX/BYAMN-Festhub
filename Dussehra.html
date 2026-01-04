@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Dussehra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Tangerine:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/festival.css">
+    <style>
+        :root {
+            --primary: #f57f17;
+            --secondary: #ffb300;
+            --accent: #ffd600;
+            --light: #fffde7;
+            --dark: #f9a825;
+        }
+        
+        .floating-decor i {
+            color: var(--primary);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Happy Dussehra</h1>
+        <button class="btn-create" id="createBtn">
+            <i class="fas fa-plus"></i> Create
+        </button>
+    </header>
+
+    <div class="main-content">
+        <div class="floating-decor decor-1">
+            <i class="fas fa-bullseye"></i>
+        </div>
+        <div class="floating-decor decor-2">
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="share-modal" id="shareModal">
+            <div class="share-content">
+                <div class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </div>
+                <h2>Share Your Greeting</h2>
+                <p>Celebrate the victory of good over evil!</p>
+                
+                <div class="share-options">
+                    <div class="share-option whatsapp" id="whatsappShare">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="share-option facebook" id="facebookShare">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="share-option twitter" id="twitterShare">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="share-option copy-link" id="copyLink">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                </div>
+                
+                <div class="share-url">
+                    <input type="text" id="shareUrlInput" readonly>
+                    <button id="copyUrlBtn">Copy</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-box" id="formBox">
+            <h2>Create Your Greeting</h2>
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder=" " autocomplete="off">
+                <label for="nameInput">Your Name</label>
+            </div>
+            <button class="btn-generate" id="generateBtn">
+                Generate Greeting
+            </button>
+        </div>
+        
+        <div class="greeting-card" id="greetingCard">
+            <h2>Happy Dussehra</h2>
+            <img class="greeting-image" id="greetingImage" src="" alt="Dussehra Image">
+            
+            <p class="greeting-text" id="randomWish"></p>
+            
+            <p class="wishing-you">Wishing You</p>
+            <h3 class="sender-name" id="senderName"></h3>
+            
+            <div class="card-actions">
+                <button class="btn-share" id="shareBtn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button class="btn-new" id="newCardBtn">
+                    <i class="fas fa-redo"></i> Create New
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            "images/Dussehra.jpg"
+        ];
+
+        const wishes = [
+            "May the truth always triumph and good be victorious over evil. Happy Dussehra!",
+            "Wishing you success and happiness in everything you do. Happy Dussehra!",
+            "May this Dussehra burn all your worries with the burning of Ravana.",
+            "Celebrating the victory of good over evil. Happy Vijaya Dashami!",
+            "May Lord Rama bless you with strength and courage. Happy Dussehra!"
+        ];
+    </script>
+    <script src="js/festival.js"></script>
+</body>
+</html>

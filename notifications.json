@@ -5,7 +5,7 @@
     "message": "Explore our amazing collection of Christmas wishes and greeting cards. Perfect for sharing joy with your loved ones this holiday season.",
     "type": "success",
     "timestamp": "2024-12-20T10:30:00Z",
-    "image": "https://images.unsplash.com/photo-1512389098783-66b81f86e199?w=400&h=200&fit=crop&auto=format",
+    "image": "images/Christmas.jpg",
     "link": "Christmas.html",
     "read": false
   },
@@ -23,7 +23,7 @@
     "message": "Get ready for 2025! Our New Year wishes collection will be available starting December 26th. Be the first to share celebratory messages!",
     "type": "info",
     "timestamp": "2024-12-17T09:45:00Z",
-    "image": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=400&h=200&fit=crop&auto=format",
+    "image": "images/NewYear.jpg",
     "link": "#new-year-section",
     "read": false
   },
@@ -41,7 +41,7 @@
     "message": "Premium templates are now free for all users until December 31st! Upgrade your festival wishes with beautiful designs.",
     "type": "success",
     "timestamp": "2024-12-15T11:30:00Z",
-    "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=200&fit=crop&auto=format",
+    "image": "images/Offer.jpg",
     "link": "file.html",
     "read": true
   },
