@@ -1,0 +1,3966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYAMN Festhub - Free Greeting Cards</title>
+    <meta name="description" content="BYAMN Festhub - Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi & more. 1000+ free customizable greeting card templates for all occasions.">
+    <meta name="keywords" content="BYAMN Festhub, festival wishes, Diwali cards, Eid greetings, Christmas wishes, Holi messages, free greeting cards, Indian festivals">
+    <meta name="author" content="BYAMN Festhub">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://byamn.vercel.app/">
+    <meta property="og:title" content="BYAMN Festhub - Best Festival Wishes for All Occasions">
+    <meta property="og:description" content="Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi and more. Free customizable greeting cards.">
+    <meta property="og:image" content="https://byamn.vercel.app/images/social-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://byamn.vercel.app/">
+    <meta property="twitter:title" content="BYAMN Festhub - Best Festival Wishes for All Occasions">
+    <meta property="twitter:description" content="Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi and more. Free customizable greeting cards.">
+    <meta property="twitter:image" content="https://byamn.vercel.app/images/social-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://byamn.vercel.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png">
+    
+    <!-- Preconnect to important domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --hindu: #F59E0B;
+            --muslim: #10B981;
+            --christian: #3B82F6;
+            --other: #EC4899;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+            --light-gray: #E5E7EB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #F3F4F6;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Header Section */
+        .fx-header {
+            --fx-primary: #7C3AED;
+            --fx-accent: #EC4899;
+            --fx-light: #F5F3FF;
+            height: 56px;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            width: 100%;
+        }
+        
+        .fx-header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .fx-logo-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .fx-logo {
+            height: 28px;
+            width: auto;
+            transition: transform 0.2s ease;
+        }
+        
+        .fx-logo:hover {
+            transform: scale(1.1);
+        }
+        
+        .fx-brand {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        
+        .fx-brand-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--fx-primary);
+            letter-spacing: -0.3px;
+        }
+        
+        .fx-brand-tag {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--fx-accent);
+            background: rgba(236, 72, 153, 0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        .fx-nav-pills {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        
+        .fx-pill {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--fx-light);
+            color: var(--fx-primary);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 0 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .fx-pill:hover {
+            background: rgba(124, 58, 237, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .fx-pill.active {
+            background: var(--fx-primary);
+            color: white;
+            box-shadow: 0 2px 6px rgba(124, 58, 237, 0.3);
+        }
+        
+        .fx-nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            padding: 8px 0;
+            min-width: 200px;
+            z-index: 1000;
+            margin-top: 8px;
+        }
+        
+        .fx-nav-menu.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .fx-nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .fx-nav-item:last-child {
+            border-bottom: none;
+        }
+        
+        .fx-nav-item:hover {
+            background: var(--fx-light);
+            color: var(--fx-primary);
+        }
+        
+        .fx-nav-item i {
+            margin-right: 12px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .fx-menu-toggle {
+            position: relative;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Quick Access Navigation */
+        .fx-quick-nav {
+            display: flex;
+            gap: 4px;
+            margin-right: 12px;
+        }
+        
+        .fx-quick-pill {
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: rgba(124, 58, 237, 0.08);
+            color: var(--fx-primary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .fx-quick-pill:hover {
+            background: var(--fx-primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .fx-header-accent {
+            height: 2px;
+            background: linear-gradient(90deg, var(--fx-primary), var(--fx-accent));
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0.8;
+        }
+        
+        /* Search Section */
+        .search-section {
+            max-width: 700px;
+            margin: 2rem auto 3rem;
+            animation: fadeInUp 0.8s ease;
+            padding: 0 1rem;
+        }
+        
+        .search-container {
+            position: relative;
+            background: white;
+            border-radius: 50px;
+            padding: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            padding-right: 60px;
+        }
+        
+        .search-input:focus {
+            outline: none;
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        /* Categories Section */
+        .categories-section {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding: 0 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 1rem;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .category-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+        
+        .category-btn i {
+            margin-right: 0.5rem;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .category-btn.hindu {
+            border-color: var(--hindu);
+        }
+        
+        .category-btn.hindu.active, .category-btn.hindu:hover {
+            background: var(--hindu);
+            color: white;
+        }
+        
+        .category-btn.muslim {
+            border-color: var(--muslim);
+        }
+        
+        .category-btn.muslim.active, .category-btn.muslim:hover {
+            background: var(--muslim);
+            color: white;
+        }
+        
+        .category-btn.christian {
+            border-color: var(--christian);
+        }
+        
+        .category-btn.christian.active, .category-btn.christian:hover {
+            background: var(--christian);
+            color: white;
+        }
+        
+        .category-btn.other {
+            border-color: var(--other);
+        }
+        
+        .category-btn.other.active, .category-btn.other:hover {
+            background: var(--other);
+            color: white;
+        }
+        
+        /* Websites Grid Section */
+        .websites-section {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .website-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .website-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .card-favorite {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+            color: #999;
+        }
+        
+        .card-favorite:hover {
+            background: white;
+            transform: scale(1.1);
+            color: #EF4444;
+        }
+        
+        .card-favorite.active {
+            background: #EF4444;
+            color: white;
+        }
+        
+        .card-favorite.active:hover {
+            background: #DC2626;
+        }
+        
+        .hindu-badge {
+            background: var(--hindu);
+            color: white;
+        }
+        
+        .muslim-badge {
+            background: var(--muslim);
+            color: white;
+        }
+        
+        .christian-badge {
+            background: var(--christian);
+            color: white;
+        }
+        
+        .other-badge {
+            background: var(--other);
+            color: white;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .card-description {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover i {
+            transform: translateX(3px);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-hindu {
+            background: var(--hindu);
+            color: white;
+        }
+        
+        .btn-hindu:hover {
+            background: #D97706;
+        }
+        
+        .btn-muslim {
+            background: var(--muslim);
+            color: white;
+        }
+        
+        .btn-muslim:hover {
+            background: #059669;
+        }
+        
+        .btn-christian {
+            background: var(--christian);
+            color: white;
+        }
+        
+        .btn-christian:hover {
+            background: #2563EB;
+        }
+        
+        .btn-other {
+            background: var(--other);
+            color: white;
+        }
+        
+        .btn-other:hover {
+            background: #DB2777;
+        }
+        
+        .view-count {
+            font-size: 0.8rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+        }
+        
+        .view-count i {
+            margin-right: 0.3rem;
+        }
+        
+        /* Upcoming Events Section */
+        .events-section {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .events-slider {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--light-gray);
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .events-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .events-slider::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+        
+        .events-slider::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        .event-card {
+            min-width: 250px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+        }
+        
+        .event-date {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .event-day {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        
+        .event-month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+        
+        .event-content {
+            padding: 1.2rem;
+        }
+        
+        .event-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-description {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* Featured Section */
+        .featured-section {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .featured-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .featured-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .featured-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+        }
+        
+        .featured-content {
+            padding: 2rem;
+        }
+        
+        .featured-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .featured-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .step {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+        
+        .step-description {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin-right: 1rem;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* Star Rating */
+        .rating {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .star {
+            color: #F59E0B;
+            font-size: 0.9rem;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            color: white;
+            margin: 0 1rem 3rem;
+            text-align: center;
+        }
+        
+        .newsletter-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-description {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            background: var(--hindu);
+            color: white;
+            border: none;
+            padding: 0 1.8rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background: #D97706;
+        }
+        
+        /* Festival Popup Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .festival-modal {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .festival-modal {
+            transform: translateY(0);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .modal-date {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Review Modal */
+        .review-modal {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .review-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            text-align: center;
+        }
+        
+        .rating-input {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .rating-star {
+            font-size: 2rem;
+            color: #E5E7EB;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        
+        .rating-star.active, .rating-star:hover {
+            color: #F59E0B;
+        }
+        
+        .review-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .review-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-link a {
+            color: #D1D5DB;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .footer-link a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #9CA3AF;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scrollEvents {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 7));
+            }
+        }
+        
+        /* Navigation Badge Styles */
+        .fx-pill-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #EF4444;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 600;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        
+        .fx-pill {
+            position: relative;
+        }
+        
+        /* Breadcrumb Navigation */
+        .fx-breadcrumb {
+            background: rgba(124, 58, 237, 0.05);
+            padding: 8px 0;
+            margin-bottom: 1rem;
+        }
+        
+        .fx-breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        .fx-breadcrumb-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .fx-breadcrumb-link {
+            color: var(--fx-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .fx-breadcrumb-link:hover {
+            color: var(--fx-accent);
+        }
+        
+        .fx-breadcrumb-separator {
+            color: #D1D5DB;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .fx-header {
+                height: 52px;
+            }
+            
+            .fx-brand-name {
+                font-size: 1rem;
+            }
+            
+            .fx-pill {
+                min-width: 28px;
+                height: 28px;
+                padding: 0 6px;
+            }
+            
+            .fx-quick-nav {
+                display: none;
+            }
+            
+            .fx-nav-menu {
+                right: -8px;
+                min-width: 180px;
+            }
+            
+            .categories {
+                justify-content: center;
+            }
+            
+            .featured-card {
+                flex-direction: column;
+            }
+            
+            .featured-image {
+                height: 200px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                background: transparent;
+                gap: 1rem;
+            }
+            
+            .newsletter-input {
+                border-radius: 50px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 50px;
+                padding: 0.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                padding: 0;
+            }
+            
+            .section-title::after {
+                left: 0;
+            }
+            
+            .featured-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .websites-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-section {
+                padding: 1.5rem;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+            
+            .newsletter-title {
+                font-size: 1.3rem;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* Visually hidden for accessibility */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Dynamic Notification System Styles */
+        .notification-section {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            width: 380px;
+            max-height: 80vh;
+            z-index: 1001;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateX(400px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            overflow: hidden;
+        }
+        
+        .notification-section.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .notification-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .notification-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .notification-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .notification-action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            border-radius: 6px;
+            padding: 0.3rem 0.6rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.2s ease;
+        }
+        
+        .notification-action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.2rem;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+        
+        .notification-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .notification-list {
+            max-height: 60vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--light-gray);
+        }
+        
+        .notification-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .notification-list::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+        
+        .notification-list::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .notification-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .notification-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .notification-item.unread {
+            background: rgba(139, 92, 246, 0.02);
+            border-left: 3px solid var(--primary);
+        }
+        
+        .notification-item.unread::before {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+        }
+        
+        .notification-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .notification-item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin: 0;
+            line-height: 1.3;
+        }
+        
+        .notification-item-message {
+            color: var(--gray);
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        .notification-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        
+        .notification-time {
+            font-size: 0.75rem;
+            color: #9CA3AF;
+        }
+        
+        .notification-type-badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .notification-type-info {
+            background: rgba(59, 130, 246, 0.1);
+            color: #2563EB;
+        }
+        
+        .notification-type-success {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+        }
+        
+        .notification-type-warning {
+            background: rgba(245, 158, 11, 0.1);
+            color: #D97706;
+        }
+        
+        .notification-type-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #DC2626;
+        }
+        
+        .notification-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .notification-actions-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .notification-btn {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .notification-btn-read {
+            background: var(--light-gray);
+            color: var(--dark);
+        }
+        
+        .notification-btn-read:hover {
+            background: #D1D5DB;
+        }
+        
+        .notification-btn-dismiss {
+            background: rgba(239, 68, 68, 0.1);
+            color: #DC2626;
+        }
+        
+        .notification-btn-dismiss:hover {
+            background: rgba(239, 68, 68, 0.2);
+        }
+        
+        .notification-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-top: 0.5rem;
+        }
+        
+        .notification-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        .notification-link i {
+            font-size: 0.7rem;
+        }
+        
+        .notification-empty {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: var(--gray);
+        }
+        
+        .notification-empty i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        .notification-count-summary {
+            padding: 0.8rem 1.5rem;
+            background: #f8f9fa;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        .collapse-section {
+            border-top: 1px solid var(--light-gray);
+            background: #f8f9fa;
+        }
+        
+        .collapse-toggle {
+            width: 100%;
+            padding: 0.8rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--dark);
+            transition: background 0.2s ease;
+        }
+        
+        .collapse-toggle:hover {
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .collapse-content.expanded {
+            max-height: 300px;
+        }
+        
+        /* Responsive Design for Notifications */
+        @media (max-width: 768px) {
+            .notification-section {
+                width: calc(100vw - 40px);
+                right: 20px;
+                left: 20px;
+                top: 60px;
+                max-height: 70vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .notification-section {
+                width: calc(100vw - 20px);
+                right: 10px;
+                left: 10px;
+                top: 60px;
+            }
+            
+            .notification-header {
+                padding: 0.8rem 1rem;
+            }
+            
+            .notification-item {
+                padding: 0.8rem 1rem;
+            }
+        }
+        
+        /* Animation for new notifications */
+        @keyframes slideInNotification {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .notification-item.new {
+            animation: slideInNotification 0.3s ease;
+        }
+        
+        /* Notification toast for new notifications */
+        .notification-toast {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 1rem;
+            width: 300px;
+            z-index: 1002;
+            transform: translateX(320px);
+            transition: transform 0.3s ease;
+        }
+        
+        .notification-toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        
+        .toast-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .toast-icon.info { background: rgba(59, 130, 246, 0.1); color: #2563EB; }
+        .toast-icon.success { background: rgba(16, 185, 129, 0.1); color: #059669; }
+        .toast-icon.warning { background: rgba(245, 158, 11, 0.1); color: #D97706; }
+        .toast-icon.error { background: rgba(239, 68, 68, 0.1); color: #DC2626; }
+        
+        .toast-text {
+            flex: 1;
+        }
+        
+        .toast-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 0 0 0.3rem 0;
+        }
+        
+        .toast-message {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with H1 for SEO -->
+    <header class="fx-header">
+      <div class="fx-header-inner">
+        <div class="fx-logo-group">
+          <img src="https://byamn.vercel.app/logo.png" alt="BYAMN" class="fx-logo">
+          <span class="fx-brand">
+            <span class="fx-brand-name">BYAMN Festhub</span>
+            <span class="fx-brand-tag">Festivals</span>
+          </span>
+        </div>
+        <div class="fx-nav-pills">
+          <!-- Quick Access Navigation -->
+          <div class="fx-quick-nav">
+            <a href="#diwali" class="fx-quick-pill" data-category="hindu">Diwali</a>
+            <a href="#holi" class="fx-quick-pill" data-category="hindu">Holi</a>
+            <a href="#christmas" class="fx-quick-pill" data-category="christian">Christmas</a>
+          </div>
+          
+          <!-- Search Button -->
+          <button class="fx-pill" id="headerSearchBtn" aria-label="Search" title="Search Festivals">
+            <i class="fas fa-search"></i>
+          </button>
+          
+          <!-- Favorites Button -->
+          <button class="fx-pill" id="favoritesBtn" aria-label="Favorites" title="Your Favorites">
+            <i class="fas fa-heart"></i>
+            <span class="fx-pill-badge" id="favoritesCount">0</span>
+          </button>
+          
+          <!-- Notifications -->
+          <button class="fx-pill" id="notificationsBtn" aria-label="Notifications" title="Festival Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="fx-pill-badge" id="notificationCount">3</span>
+          </button>
+          
+          <!-- Main Menu Toggle -->
+          <div class="fx-menu-toggle">
+            <button class="fx-pill" id="menuToggle" aria-label="Menu" title="More Options">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="fx-nav-menu" id="navMenu">
+              <a href="#about" class="fx-nav-item">
+                <i class="fas fa-info-circle"></i>
+                About Us
+              </a>
+              <a href="#categories" class="fx-nav-item">
+                <i class="fas fa-th-large"></i>
+                All Categories
+              </a>
+              <a href="#calendar" class="fx-nav-item">
+                <i class="fas fa-calendar-alt"></i>
+                Festival Calendar
+              </a>
+              <a href="#trending" class="fx-nav-item">
+                <i class="fas fa-fire"></i>
+                Trending
+              </a>
+              <a href="file.html" class="fx-nav-item">
+                <i class="fas fa-link"></i>
+                Link Shortener
+              </a>
+              <a href="#help" class="fx-nav-item">
+                <i class="fas fa-question-circle"></i>
+                Help & Support
+              </a>
+              <a href="#contact" class="fx-nav-item">
+                <i class="fas fa-envelope"></i>
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fx-header-accent"></div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="fx-breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="fx-breadcrumb-list">
+                <li class="fx-breadcrumb-item">
+                    <a href="#" class="fx-breadcrumb-link">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="fx-breadcrumb-item">
+                    <span class="fx-breadcrumb-separator">/</span>
+                    <span id="currentPageBreadcrumb">All Festivals</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- Dynamic Notification Section -->
+    <div class="notification-section" id="notificationSection">
+        <div class="notification-header">
+            <h3 class="notification-title">Notifications</h3>
+            <div class="notification-actions">
+                <button class="notification-action-btn" id="markAllReadBtn" title="Mark all as read">
+                    <i class="fas fa-check-double"></i>
+                </button>
+                <button class="notification-action-btn" id="clearAllBtn" title="Clear all notifications">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            <button class="notification-close" id="notificationCloseBtn" aria-label="Close notifications">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="notification-count-summary" id="notificationSummary">
+            Loading notifications...
+        </div>
+        
+        <div class="notification-list" id="notificationList">
+            <!-- Notifications will be dynamically inserted here -->
+        </div>
+        
+        <div class="collapse-section" id="olderNotificationsSection" style="display: none;">
+            <button class="collapse-toggle" id="olderNotificationsToggle">
+                <span>Show older notifications</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="collapse-content" id="olderNotificationsContent">
+                <!-- Older notifications will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="notificationToast">
+        <div class="toast-content">
+            <div class="toast-icon" id="toastIcon">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="toast-text">
+                <div class="toast-title" id="toastTitle">New Notification</div>
+                <div class="toast-message" id="toastMessage">You have a new notification</div>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container">
+        <!-- Search Section -->
+        <section class="search-section" aria-label="Search festival wishes">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for Diwali, Eid, Christmas wishes..." id="searchInput" aria-label="Search festival wishes">
+                <button class="search-btn" id="searchBtn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Categories Section -->
+        <section class="categories-section" aria-labelledby="categories-heading">
+            <h2 id="categories-heading" class="section-title">Browse Festival Categories</h2>
+            <div class="categories" id="categoriesContainer">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-star"></i> All
+                </button>
+                <button class="category-btn hindu" data-category="hindu">
+                    <i class="fas fa-om"></i> Hindu
+                </button>
+                <button class="category-btn muslim" data-category="muslim">
+                    <i class="fas fa-mosque"></i> Muslim
+                </button>
+                <button class="category-btn christian" data-category="christian">
+                    <i class="fas fa-cross"></i> Christian
+                </button>
+                <button class="category-btn other" data-category="other">
+                    <i class="fas fa-globe"></i> Other
+                </button>
+            </div>
+        </section>
+        
+        <!-- Websites Grid Section -->
+        <section class="websites-section" aria-labelledby="popular-wishes-heading">
+            <h2 id="popular-wishes-heading" class="section-title">Most Popular Festival Wishes</h2>
+            <div class="websites-grid" id="websitesGrid">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+        </section>
+        
+        <!-- Upcoming Events Section -->
+        <section class="events-section" aria-labelledby="upcoming-events-heading">
+            <h2 id="upcoming-events-heading" class="section-title">Upcoming Festival Dates 2025</h2>
+            <div class="events-slider" id="eventsSlider">
+                <!-- Events will be dynamically inserted here -->
+            </div>
+        </section>
+        
+        <!-- Featured Section -->
+        <section class="featured-section" aria-labelledby="featured-heading">
+            <h2 id="featured-heading" class="visually-hidden">Link Shortner</h2>
+            <div class="featured-card">
+                <div class="featured-image" style="background-image: url('https://kinsta.com/wp-content/uploads/2023/12/create-url-shortener-with-python-1024x512.png');" aria-label="Diwali Festival"></div>
+                <div class="featured-content">
+                    <h3 class="featured-title">Create Link Shortner and Earn</h3>
+                    <p class="featured-description">BYAMN Festhub's Link Shortener lets you create short, shareable links in seconds and start earning from every click. Perfect for bloggers, students, and marketers, our tool is fast, secure, and easy to use. Track link performance in real time and boost your online income effortlessly.</p>
+                    <a href="file.html" class="btn btn-hindu">
+                        Try Create Link <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section class="how-it-works" aria-labelledby="how-it-works-heading">
+            <h2 id="how-it-works-heading" class="section-title">How BYAMN Festhub Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Choose a Template</h3>
+                    <p class="step-description">Browse our collection of beautifully designed templates for every festival and occasion.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Customize Your Design</h3>
+                    <p class="step-description">Add festival, and write your custom Name to make it unique.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Share With Loved Ones</h3>
+                    <p class="step-description">Send directly via social media, email, or download to share however you prefer.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading" class="section-title">What Our Users Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="testimonial-text">"I used BYAMN Festhub to create Diwali wishes last year and all my relatives loved them! The templates are beautiful and so easy to customize."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/32.jpg');" aria-label="Priya Sharma"></div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="far fa-star star"></i>
+                    </div>
+                    <p class="testimonial-text">"As someone who's not very tech-savvy, I found BYAMN Festhub incredibly easy to use. Created beautiful Eid wishes in minutes!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/45.jpg');" aria-label="Ahmed Khan"></div>
+                        <div class="author-info">
+                            <h4>Ahmed Khan</h4>
+                            <p>Delhi, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star-half-alt star"></i>
+                    </div>
+                    <p class="testimonial-text">"The Christmas card creator saved me so much time. I could personalize cards for all my friends with just a few clicks."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');" aria-label="Maria Fernandes"></div>
+                        <div class="author-info">
+                            <h4>Maria Fernandes</h4>
+                            <p>Goa, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section" aria-labelledby="newsletter-heading">
+            <h2 id="newsletter-heading" class="newsletter-title">Get Festival Updates</h2>
+            <p class="newsletter-description">Subscribe to get notified about upcoming festivals and new greeting templates</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>BYAMN Festhub</h3>
+                    <p style="color: #D1D5DB; font-size: 0.9rem; margin-bottom: 1rem;">India's most loved platform for festival wishes and greetings.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">Hindu Festivals</a></li>
+                        <li class="footer-link"><a href="#">Muslim Festivals</a></li>
+                        <li class="footer-link"><a href="#">Christian Festivals</a></li>
+                        <li class="footer-link"><a href="#">Birthday Wishes</a></li>
+                        <li class="footer-link"><a href="#">Anniversary</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Popular</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">Diwali Wishes</a></li>
+                        <li class="footer-link"><a href="#">Eid Mubarak</a></li>
+                        <li class="footer-link"><a href="#">Christmas Cards</a></li>
+                        <li class="footer-link"><a href="#">New Year Greetings</a></li>
+                        <li class="footer-link"><a href="#">Holi Wishes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">About Us</a></li>
+                        <li class="footer-link"><a href="#">Contact</a></li>
+                        <li class="footer-link"><a href="#">Privacy Policy</a></li>
+                        <li class="footer-link"><a href="#">Terms of Service</a></li>
+                        <li class="footer-link"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 BYAMN Festhub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Festival Popup Modal -->
+    <div class="modal-overlay" id="festivalModal">
+        <div class="festival-modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title" id="modalFestivalTitle">Diwali Festival</h3>
+            <span class="modal-date" id="modalFestivalDate">20 October 2025</span>
+            <p class="modal-description" id="modalFestivalDesc">The festival of lights celebrated across India with lamps, fireworks, and sweets.</p>
+            <div class="modal-buttons">
+                <a href="#" class="btn btn-primary" id="modalWishNow">
+                    Send Wishes Now <i class="fas fa-gift"></i>
+                </a>
+                <button class="btn" id="modalLeaveReview" style="background: var(--light-gray); color: var(--dark);">
+                    Leave a Review <i class="fas fa-star"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Review Modal -->
+    <div class="modal-overlay" id="reviewModal">
+        <div class="review-modal">
+            <button class="modal-close" id="reviewModalClose">&times;</button>
+            <h3 class="review-title">Rate Your Experience</h3>
+            <div class="rating-input" id="ratingStars">
+                <i class="far fa-star rating-star" data-rating="1"></i>
+                <i class="far fa-star rating-star" data-rating="2"></i>
+                <i class="far fa-star rating-star" data-rating="3"></i>
+                <i class="far fa-star rating-star" data-rating="4"></i>
+                <i class="far fa-star rating-star" data-rating="5"></i>
+            </div>
+            <textarea class="review-textarea" placeholder="Share your experience with this festival..." id="reviewText"></textarea>
+            <button class="btn btn-primary" id="submitReview" style="width: 100%;">
+                Submit Review <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Website Data with all festivals
+        const websitesData = [
+            // Hindu Festivals
+            {
+                id: 1,
+                title: "Lohri",
+                description: "Celebrated on 13 January (Monday) marking the end of winter and arrival of longer days.",
+                category: "hindu",
+                image: "https://www.abhibus.com/blog/wp-content/uploads/2023/12/Lohri-Festival-2024-Date-History-Celebration-696x385.jpg",
+                views: "12.5K",
+                link: "#"
+            },
+            {
+                id: 2,
+                title: "Makar Sankranti",
+                description: "Celebrated on 14 January (Tuesday) marking the transition of the Sun into Capricorn.",
+                category: "hindu",
+                image: "https://www.zettafarms.com/wp-content/uploads/2024/01/10082065-scaled.jpg",
+                views: "15.2K",
+                link: "#"
+            },
+            {
+                id: 3,
+                title: "Vasant Panchami",
+                description: "Celebrated on 2 February (Sunday) dedicated to Goddess Saraswati, the deity of knowledge.",
+                category: "hindu",
+                image: "https://www.hindustantimes.com/ht-img/img/2024/02/11/550x309/FK0q_CVaIAEd6rA_1674553945278_1707658780708.jpg",
+                views: "9.7K",
+                link: "#"
+            },
+            {
+                id: 4,
+                title: "Maha Shivaratri",
+                description: "Celebrated on 26 February (Wednesday) honoring Lord Shiva with night-long prayers.",
+                category: "hindu",
+                image: "https://www.haridwarrudraksha.com/cdn/shop/articles/Maha_shivratri_banner_98980e61-b6bb-4479-8e44-acc504adc9c3_1100x.png?v=1739877220",
+                views: "14.3K",
+                link: "#"
+            },
+            {
+                id: 5,
+                title: "Holi",
+                description: "Festival of colors celebrated on 14 March (Friday) after Holika Dahan on 13 March.",
+                category: "hindu",
+                image: "https://codegyan.in/articles/images/post/10d4392822b9bf1da90c7f060c6a0157.webp",
+                views: "22.1K",
+                link: "#"
+            },
+            {
+                id: 6,
+                title: "Ugadi/Gudi Padwa",
+                description: "New Year celebration on 30 March (Sunday) for many Indian communities.",
+                category: "hindu",
+                image: "https://c.ndtvimg.com/2022-12/acsj3n4g_gudi-padwa_625x300_26_December_22.jpg?downsize=773:435",
+                views: "8.9K",
+                link: "#"
+            },
+            {
+                id: 7,
+                title: "Ram Navami",
+                description: "Celebrated on 6 April (Sunday) marking the birth of Lord Rama.",
+                category: "hindu",
+                image: "https://s.calendarr.com/upload/9a/60/ram-navami.jpg?auto_optmize=low",
+                views: "11.4K",
+                link: "#"
+            },
+            {
+                id: 8,
+                title: "Hanuman Jayanti",
+                description: "Celebrated on 12 April (Saturday) marking the birth of Lord Hanuman.",
+                category: "hindu",
+                image: "https://images.indianexpress.com/2025/04/Happy-Hanuman-Jayanti-2025-Wishes-.jpg?w=640",
+                views: "10.8K",
+                link: "#"
+            },
+            {
+                id: 9,
+                title: "Vaisakhi/Baisakhi",
+                description: "Harvest festival celebrated on 14 April (Monday) marking the new year in many regions.",
+                category: "hindu",
+                image: "https://cdn.abhibus.com/2024/04/Baisakhi-2024-Date-History-Celebration-696x385.jpg",
+                views: "9.5K",
+                link: "#"
+            },
+            {
+                id: 10,
+                title: "Akshaya Tritiya",
+                description: "Celebrated on 30 April (Wednesday) considered auspicious for new beginnings.",
+                category: "hindu",
+                image: "https://images.goodreturns.in/webp/img/2025/04/akshayatritiya600-1745977432.jpg",
+                views: "7.6K",
+                link: "#"
+            },
+            {
+                id: 11,
+                title: "Buddha Purnima",
+                description: "Celebrated on 12 May (Monday) marking the birth of Gautama Buddha.",
+                category: "hindu",
+                image: "https://i0.wp.com/theunstumbled.com/wp-content/uploads/2025/05/Buddha-Purnima-2025.jpg?w=1200&ssl=1",
+                views: "6.3K",
+                link: "#"
+            },
+            {
+                id: 12,
+                title: "Savitri Vrat",
+                description: "Celebrated on 26 May (Monday) by married women for their husbands' longevity.",
+                category: "hindu",
+                image: "https://janmatnews.com/uploads/images/202505/image_870x_68317a205e784.webp",
+                views: "5.8K",
+                link: "#"
+            },
+            {
+                id: 13,
+                title: "Ratha Yatra",
+                description: "Puri's famous chariot festival on 27 June (Friday) honoring Lord Jagannath.",
+                category: "hindu",
+                image: "https://www.iskconbangalore.org/wp-content/uploads/2022/08/ratha-yatra-2025.jpg",
+                views: "8.2K",
+                link: "#"
+            },
+            {
+                id: 14,
+                title: "Guru Purnima",
+                description: "Celebrated on 10 July (Thursday) honoring spiritual and academic teachers.",
+                category: "hindu",
+                image: "https://www.kreditbee.in/blog/content/images/size/w2000/2024/08/Blog-Image_Aug_22_Guru-Purnima-2024.png",
+                views: "7.1K",
+                link: "#"
+            },
+            {
+                id: 15,
+                title: "Hariyali Teej",
+                description: "Celebrated on 27 July (Sunday) by women for marital bliss and happiness.",
+                category: "hindu",
+                image: "https://images.news18.com/ibnlive/uploads/2021/08/1628613709_hariyali-teej4.png?impolicy=website&width=0&height=0",
+                views: "6.9K",
+                link: "#"
+            },
+            {
+                id: 16,
+                title: "Nag Panchami",
+                description: "Celebrated on 29 July (Tuesday) worshiping serpent deities.",
+                category: "hindu",
+                image: "https://c.ndtvimg.com/2024-08/ragbgh9g_lord-shiva_625x300_05_August_24.jpg?im=FitAndFill,algorithm=dnn,width=773,height=435",
+                views: "5.4K",
+                link: "#"
+            },
+            {
+                id: 17,
+                title: "Varalakshmi Vrat",
+                description: "Celebrated on 8 August (Friday) worshiping Goddess Lakshmi for prosperity.",
+                category: "hindu",
+                image: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/varalakshmi-vratham-design-template-6820fc20677c558df821220283534905_screen.jpg?ts=1660231834",
+                views: "7.8K",
+                link: "#"
+            },
+            {
+                id: 18,
+                title: "Raksha Bandhan",
+                description: "Celebrated on 9 August (Saturday) honoring the brother-sister bond.",
+                category: "hindu",
+                image: "https://www.livehindustan.com/lh-img/smart/img/2024/08/16/1200x900/raksha_bandhan_wishes_2024_1723801778427_1723801778673.jpg",
+                views: "13.5K",
+                link: "#"
+            },
+            {
+                id: 19,
+                title: "Hartalika Teej",
+                description: "Celebrated on 26 August (Tuesday) by women for marital bliss.",
+                category: "hindu",
+                image: "https://www.thestatesman.com/wp-content/uploads/2024/09/Hartalika-Teej-2024-jpg.webp",
+                views: "6.2K",
+                link: "#"
+            },
+            {
+                id: 20,
+                title: "Ganesh Chaturthi",
+                description: "Celebrated on 27 August (Wednesday) honoring Lord Ganesha's birth.",
+                category: "hindu",
+                image: "https://img.jagranjosh.com/images/2024/September/592024/ganesh-chaturthi.webp",
+                views: "16.3K",
+                link: "#"
+            },
+            {
+                id: 21,
+                title: "Onam",
+                description: "Kerala's harvest festival on 5 September (Friday) celebrating King Mahabali.",
+                category: "hindu",
+                image: "https://images.news18.com/ibnlive/uploads/2025/01/onam-2025-dates-history-rituals-2025-01-f28d6f8d3d3fb20165983d774bde15df-16x9.jpg?impolicy=website&width=400&height=225",
+                views: "9.1K",
+                link: "#"
+            },
+            {
+                id: 22,
+                title: "Sharad Navratri",
+                description: "Nine-night festival beginning 22 September (Monday) worshiping Goddess Durga.",
+                category: "hindu",
+                image: "https://www.dwsjewellery.com/upload/StaticImages/Sharad%20Navratri%20Parana1638318148242632736.jpg",
+                views: "14.7K",
+                link: "#"
+            },
+            {
+                id: 23,
+                title: "Durga Puja",
+                description: "Celebrated 30 September (Tuesday) to 2 October (Thursday) honoring Goddess Durga.",
+                category: "hindu",
+                image: "https://navi.com/blog/wp-content/uploads/2023/02/Durga-Puja-Holiday.jpg",
+                views: "18.2K",
+                link: "#"
+            },
+            {
+                id: 24,
+                title: "Karva Chauth",
+                description: "Celebrated on 10 October (Friday) by married women for their husbands' longevity.",
+                category: "hindu",
+                image: "https://content.vinaybajrangi.com/img/content/49_Karwa%20chauth.webp",
+                views: "12.9K",
+                link: "#"
+            },
+            {
+                id: 25,
+                title: "Diwali",
+                description: "Festival of lights on 20 October (Monday) with Dhanteras on 18 October (Saturday).",
+                category: "hindu",
+                image: "https://img.etimg.com/thumb/msid-114784619,width-300,height-225,imgsize-1565828,resizemode-75/top-50-diwali-wishes.jpg",
+                views: "25.7K",
+                link: "#"
+            },
+            {
+                id: 26,
+                title: "Govardhan Puja",
+                description: "Celebrated on 22 October (Wednesday) honoring Lord Krishna's lifting of Govardhan Hill.",
+                category: "hindu",
+                image: "https://media.assettype.com/outlookindia/2024-10-14/r2wmo26k/Picture1.png?w=600&auto=format%2Ccompress&fit=max&format=webp&dpr=1.0",
+                views: "8.4K",
+                link: "#"
+            },
+            {
+                id: 27,
+                title: "Bhai Dooj",
+                description: "Celebrated on 23 October (Thursday) honoring the brother-sister bond.",
+                category: "hindu",
+                image: "https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2024/11/02/1567774-image-7.jpg?im=Resize=(700,400)",
+                views: "9.6K",
+                link: "#"
+            },
+            {
+                id: 28,
+                title: "Chhath Puja",
+                description: "Celebrated on 28 October (Tuesday) worshiping the Sun God for prosperity.",
+                category: "hindu",
+                image: "https://assets.thehansindia.com/h-upload/2024/11/04/1494430-happychhathpuja.webp",
+                views: "11.3K",
+                link: "#"
+            },
+            {
+                id: 29,
+                title: "Dev Deepavali",
+                description: "Celebrated in Varanasi on 5 November (Wednesday) as the festival of lights of the gods.",
+                category: "hindu",
+                image: "https://assets.ganeshaspeaks.com/wp-content/uploads/2020/11/dev-diwali-21-750.webp",
+                views: "7.5K",
+                link: "#"
+            },
+
+            // Muslim Festivals
+            {
+                id: 30,
+                title: "Eid-ul-Fitr",
+                description: "Celebrated around 31 March (Monday) marking the end of Ramadan.",
+                category: "muslim",
+                image: "https://static.toiimg.com/thumb/msid-119671550,imgsize-33894,width-400,resizemode-4/119671550.jpg",
+                views: "18.4K",
+                link: "#"
+            },
+            {
+                id: 31,
+                title: "Eid-ul-Adha",
+                description: "Celebrated around 7 June (Saturday) commemorating Prophet Ibrahim's sacrifice.",
+                category: "muslim",
+                image: "https://www.financialexpress.com/wp-content/uploads/2025/06/travel-home-decor-6.jpg?w=1024",
+                views: "15.9K",
+                link: "#"
+            },
+            {
+                id: 32,
+                title: "Islamic New Year",
+                description: "Approximately late June marking the beginning of the new Islamic calendar year.",
+                category: "muslim",
+                image: "https://bunny-wp-pullzone-9zb8yvsnmb.b-cdn.net/wp-content/uploads/2025/06/islamic-new-year.png",
+                views: "9.2K",
+                link: "#"
+            },
+            {
+                id: 33,
+                title: "Muharram/Ashura",
+                description: "Around 6 July commemorating the martyrdom of Imam Hussain.",
+                category: "muslim",
+                image: "https://c7.alamy.com/comp/2JCWGG5/islamic-new-year-day-or-1-muharram-vector-background-illustration-of-muslim-family-celebrating-can-be-use-for-greeting-card-or-invitation-2JCWGG5.jpg",
+                views: "11.7K",
+                link: "#"
+            },
+            {
+                id: 34,
+                title: "Milad-un-Nabi",
+                description: "Around 5 September (Friday) celebrating the birth of Prophet Muhammad.",
+                category: "muslim",
+                image: "https://images.indianexpress.com/2023/09/eid-1200-getty-gs.jpg?w=640",
+                views: "13.8K",
+                link: "#"
+            },
+
+            // Christian Festivals
+            {
+                id: 35,
+                title: "Good Friday",
+                description: "18 April 2025 (Friday) commemorating the crucifixion of Jesus Christ.",
+                category: "christian",
+                image: "https://camouflageclicks.com/assets/uploads/blog/10095355.png",
+                views: "12.6K",
+                link: "#"
+            },
+            {
+                id: 36,
+                title: "Easter Sunday",
+                description: "20 April 2025 (Sunday) celebrating the resurrection of Jesus Christ.",
+                category: "christian",
+                image: "https://www.dwsjewellery.com/upload/StaticImages/03-dws638151046426637877.jpg",
+                views: "14.3K",
+                link: "#"
+            },
+            {
+                id: 37,
+                title: "Christmas",
+                description: "25 December 2025 (Thursday) celebrating the birth of Jesus Christ.",
+                category: "christian",
+                image: "https://images.indianexpress.com/2024/02/Christmas-2024-Date-Christmas-2024-will-be-celebrated-on-25th-December-that-is-Wednesday.-Source-Freepik.jpg?w=640",
+                views: "21.5K",
+                link: "#"
+            },
+
+            // Other Festivals
+            {
+                id: 38,
+                title: "Guru Gobind Singh Jayanti",
+                description: "6 January (Monday) & 27 December (Saturday) celebrating the birth of the 10th Sikh Guru.",
+                category: "other",
+                image: "https://images.news18.com/ibnlive/uploads/2025/01/guru-gobind-jayanti-2025-2025-01-192e9181a584f376e83cf1afef55927a-16x9.jpg?impolicy=website&width=400&height=225",
+                views: "8.7K",
+                link: "#"
+            },
+            {
+                id: 39,
+                title: "Mahavir Jayanti",
+                description: "11 April (Friday) celebrating the birth of Lord Mahavira, the 24th Tirthankara of Jainism.",
+                category: "other",
+                image: "https://www.hindustantimes.com/ht-img/img/2024/04/20/550x309/GLnHzsTWoAA6QDg_1713626887839_1713626924444.jpg",
+                views: "7.3K",
+                link: "#"
+            },
+            {
+                id: 40,
+                title: "Parsi New Year",
+                description: "15 August (Friday) celebrating the Parsi New Year (Navroz).",
+                category: "other",
+                image: "https://images.news18.com/ibnlive/uploads/2022/08/parsi-new-year-166053627516x9.jpg?impolicy=website&width=400&height=225",
+                views: "6.5K",
+                link: "#"
+            },
+            {
+                id: 41,
+                title: "Dharoi Adventure Fest",
+                description: "Cultural/adventure festival beginning 23 May (Friday) for ~45 days in Gujarat.",
+                category: "other",
+                image: "https://images.moneycontrol.com/static-mcnews/2025/05/20250523105546_dharoi.png?impolicy=website&width=770&height=431",
+                views: "5.9K",
+                link: "#"
+            }
+        ];
+
+        // Events Data with all festivals
+        const eventsData = [
+            // January
+            {
+                id: 1,
+                day: "13",
+                month: "Jan",
+                title: "Lohri",
+                description: "Celebrated by Punjabi communities marking the end of winter.",
+                category: "hindu"
+            },
+            {
+                id: 2,
+                day: "14",
+                month: "Jan",
+                title: "Makar Sankranti",
+                description: "Harvest festival celebrated across India with different names.",
+                category: "hindu"
+            },
+            
+            // February
+            {
+                id: 3,
+                day: "02",
+                month: "Feb",
+                title: "Vasant Panchami",
+                description: "Dedicated to Goddess Saraswati, marking the preparation for spring.",
+                category: "hindu"
+            },
+            {
+                id: 4,
+                day: "26",
+                month: "Feb",
+                title: "Maha Shivaratri",
+                description: "Night-long celebration honoring Lord Shiva.",
+                category: "hindu"
+            },
+            
+            // March
+            {
+                id: 5,
+                day: "13",
+                month: "Mar",
+                title: "Holika Dahan",
+                description: "Bonfire night before Holi symbolizing victory of good over evil.",
+                category: "hindu"
+            },
+            {
+                id: 6,
+                day: "14",
+                month: "Mar",
+                title: "Holi",
+                description: "Festival of colors celebrating spring and love.",
+                category: "hindu"
+            },
+            {
+                id: 7,
+                day: "30",
+                month: "Mar",
+                title: "Ugadi/Gudi Padwa",
+                description: "New Year celebration for many Indian communities.",
+                category: "hindu"
+            },
+            {
+                id: 8,
+                day: "31",
+                month: "Mar",
+                title: "Eid-ul-Fitr",
+                description: "Marking the end of Ramadan with feasts and celebrations.",
+                category: "muslim"
+            },
+            
+            // April
+            {
+                id: 9,
+                day: "06",
+                month: "Apr",
+                title: "Ram Navami",
+                description: "Celebrating the birth of Lord Rama.",
+                category: "hindu"
+            },
+            {
+                id: 10,
+                day: "11",
+                month: "Apr",
+                title: "Mahavir Jayanti",
+                description: "Birth anniversary of Lord Mahavira in Jainism.",
+                category: "other"
+            },
+            {
+                id: 11,
+                day: "12",
+                month: "Apr",
+                title: "Hanuman Jayanti",
+                description: "Celebrating the birth of Lord Hanuman.",
+                category: "hindu"
+            },
+            {
+                id: 12,
+                day: "14",
+                month: "Apr",
+                title: "Vaisakhi/Baisakhi",
+                description: "Harvest festival and Sikh New Year.",
+                category: "hindu"
+            },
+            {
+                id: 13,
+                day: "18",
+                month: "Apr",
+                title: "Good Friday",
+                description: "Commemorating the crucifixion of Jesus Christ.",
+                category: "christian"
+            },
+            {
+                id: 14,
+                day: "20",
+                month: "Apr",
+                title: "Easter Sunday",
+                description: "Celebrating the resurrection of Jesus Christ.",
+                category: "christian"
+            },
+            
+            // May
+            {
+                id: 15,
+                day: "12",
+                month: "May",
+                title: "Buddha Purnima",
+                description: "Celebrating the birth, enlightenment and death of Buddha.",
+                category: "other"
+            },
+            {
+                id: 16,
+                day: "23",
+                month: "May",
+                title: "Dharoi Adventure Fest",
+                description: "Cultural and adventure festival in Gujarat (45 days).",
+                category: "other"
+            },
+            {
+                id: 17,
+                day: "26",
+                month: "May",
+                title: "Savitri Vrat",
+                description: "Observed by married women for their husbands' longevity.",
+                category: "hindu"
+            },
+            
+            // June
+            {
+                id: 18,
+                day: "07",
+                month: "Jun",
+                title: "Eid-ul-Adha",
+                description: "Festival of sacrifice commemorating Prophet Ibrahim's devotion.",
+                category: "muslim"
+            },
+            {
+                id: 19,
+                day: "27",
+                month: "Jun",
+                title: "Ratha Yatra",
+                description: "Puri's famous chariot festival of Lord Jagannath.",
+                category: "hindu"
+            },
+            
+            // July
+            {
+                id: 20,
+                day: "06",
+                month: "Jul",
+                title: "Muharram/Ashura",
+                description: "Commemorating the martyrdom of Imam Hussain.",
+                category: "muslim"
+            },
+            {
+                id: 21,
+                day: "10",
+                month: "Jul",
+                title: "Guru Purnima",
+                description: "Honoring spiritual and academic teachers.",
+                category: "hindu"
+            },
+            {
+                id: 22,
+                day: "27",
+                month: "Jul",
+                title: "Hariyali Teej",
+                description: "Celebrated by women for marital bliss.",
+                category: "hindu"
+            },
+            {
+                id: 23,
+                day: "29",
+                month: "Jul",
+                title: "Nag Panchami",
+                description: "Worship of serpent deities across India.",
+                category: "hindu"
+            },
+            
+            // August
+            {
+                id: 24,
+                day: "08",
+                month: "Aug",
+                title: "Varalakshmi Vrat",
+                description: "Worshiping Goddess Lakshmi for prosperity.",
+                category: "hindu"
+            },
+            {
+                id: 25,
+                day: "09",
+                month: "Aug",
+                title: "Raksha Bandhan",
+                description: "Celebrating the brother-sister bond.",
+                category: "hindu"
+            },
+            {
+                id: 26,
+                day: "15",
+                month: "Aug",
+                title: "Parsi New Year",
+                description: "Navroz celebration by the Parsi community.",
+                category: "other"
+            },
+            {
+                id: 27,
+                day: "26",
+                month: "Aug",
+                title: "Hartalika Teej",
+                description: "Celebrated by women for marital bliss.",
+                category: "hindu"
+            },
+            {
+                id: 28,
+                day: "27",
+                month: "Aug",
+                title: "Ganesh Chaturthi",
+                description: "Celebrating the birth of Lord Ganesha.",
+                category: "hindu"
+            },
+            
+            // September
+            {
+                id: 29,
+                day: "05",
+                month: "Sep",
+                title: "Onam",
+                description: "Kerala's harvest festival celebrating King Mahabali.",
+                category: "hindu"
+            },
+            {
+                id: 30,
+                day: "05",
+                month: "Sep",
+                title: "Milad-un-Nabi",
+                description: "Celebrating the birth of Prophet Muhammad.",
+                category: "muslim"
+            },
+            {
+                id: 31,
+                day: "22",
+                month: "Sep",
+                title: "Sharad Navratri",
+                description: "Nine nights of worshiping Goddess Durga.",
+                category: "hindu"
+            },
+            {
+                id: 32,
+                day: "30",
+                month: "Sep",
+                title: "Durga Puja Ashtami",
+                description: "Eighth day of Durga Puja celebrations.",
+                category: "hindu"
+            },
+            
+            // October
+            {
+                id: 33,
+                day: "01",
+                month: "Oct",
+                title: "Durga Maha Navami",
+                description: "Ninth day of Durga Puja celebrations.",
+                category: "hindu"
+            },
+            {
+                id: 34,
+                day: "02",
+                month: "Oct",
+                title: "Dussehra",
+                description: "Celebrating the victory of good over evil.",
+                category: "hindu"
+            },
+            {
+                id: 35,
+                day: "10",
+                month: "Oct",
+                title: "Karva Chauth",
+                description: "Observed by married women for their husbands' longevity.",
+                category: "hindu"
+            },
+            {
+                id: 36,
+                day: "18",
+                month: "Oct",
+                title: "Dhanteras",
+                description: "First day of Diwali celebrations.",
+                category: "hindu"
+            },
+            {
+                id: 37,
+                day: "20",
+                month: "Oct",
+                title: "Diwali",
+                description: "Festival of lights celebrating good over evil.",
+                category: "hindu"
+            },
+            {
+                id: 38,
+                day: "22",
+                month: "Oct",
+                title: "Govardhan Puja",
+                description: "Honoring Lord Krishna's lifting of Govardhan Hill.",
+                category: "hindu"
+            },
+            {
+                id: 39,
+                day: "23",
+                month: "Oct",
+                title: "Bhai Dooj",
+                description: "Celebrating the brother-sister bond.",
+                category: "hindu"
+            },
+            {
+                id: 40,
+                day: "28",
+                month: "Oct",
+                title: "Chhath Puja",
+                description: "Worshiping the Sun God for prosperity.",
+                category: "hindu"
+            },
+            
+            // November
+            {
+                id: 41,
+                day: "05",
+                month: "Nov",
+                title: "Dev Deepavali",
+                description: "Festival of lights of the gods in Varanasi.",
+                category: "hindu"
+            },
+            
+            // December
+            {
+                id: 42,
+                day: "25",
+                month: "Dec",
+                title: "Christmas",
+                description: "Celebrating the birth of Jesus Christ.",
+                category: "christian"
+            },
+            {
+                id: 43,
+                day: "27",
+                month: "Dec",
+                title: "Guru Gobind Singh Jayanti",
+                description: "Celebrating the birth of the 10th Sikh Guru.",
+                category: "other"
+            }
+        ];
+
+        // DOM Elements
+        const websitesGrid = document.getElementById('websitesGrid');
+        const eventsSlider = document.getElementById('eventsSlider');
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        // Navigation Elements
+        const headerSearchBtn = document.getElementById('headerSearchBtn');
+        const favoritesBtn = document.getElementById('favoritesBtn');
+        const notificationsBtn = document.getElementById('notificationsBtn');
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const quickNavPills = document.querySelectorAll('.fx-quick-pill');
+        const currentPageBreadcrumb = document.getElementById('currentPageBreadcrumb');
+        const favoritesCount = document.getElementById('favoritesCount');
+        const notificationCount = document.getElementById('notificationCount');
+        
+        // Notification System Elements
+        const notificationSection = document.getElementById('notificationSection');
+        const notificationCloseBtn = document.getElementById('notificationCloseBtn');
+        const notificationList = document.getElementById('notificationList');
+        const notificationSummary = document.getElementById('notificationSummary');
+        const markAllReadBtn = document.getElementById('markAllReadBtn');
+        const clearAllBtn = document.getElementById('clearAllBtn');
+        const olderNotificationsSection = document.getElementById('olderNotificationsSection');
+        const olderNotificationsToggle = document.getElementById('olderNotificationsToggle');
+        const olderNotificationsContent = document.getElementById('olderNotificationsContent');
+        const notificationToast = document.getElementById('notificationToast');
+        const toastIcon = document.getElementById('toastIcon');
+        const toastTitle = document.getElementById('toastTitle');
+        const toastMessage = document.getElementById('toastMessage');
+        
+        // Modal Elements
+        const festivalModal = document.getElementById('festivalModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalFestivalTitle = document.getElementById('modalFestivalTitle');
+        const modalFestivalDate = document.getElementById('modalFestivalDate');
+        const modalFestivalDesc = document.getElementById('modalFestivalDesc');
+        const modalWishNow = document.getElementById('modalWishNow');
+        const modalLeaveReview = document.getElementById('modalLeaveReview');
+        
+        // Review Modal Elements
+        const reviewModal = document.getElementById('reviewModal');
+        const reviewModalClose = document.getElementById('reviewModalClose');
+        const ratingStars = document.getElementById('ratingStars');
+        const reviewText = document.getElementById('reviewText');
+        const submitReview = document.getElementById('submitReview');
+
+        // Current filter state
+        let currentCategory = 'all';
+        let currentSearch = '';
+        let currentRating = 0;
+        let currentFestival = null;
+        let scrollInterval = null;
+        let favorites = JSON.parse(localStorage.getItem('festhub-favorites') || '[]');
+        let notificationsData = [];
+        let isNotificationSectionOpen = false;
+        let notificationCheckInterval = null;
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderWebsites();
+            renderEvents();
+            setupEventListeners();
+            setupNavigationEventListeners();
+            setupNotificationSystem();
+            loadNotifications();
+            checkTodayFestivals();
+            startAutoScroll();
+            updateFavoritesCount();
+            updateNotificationCount();
+            
+            // Track page view
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    'page_title': 'BYAMN Festhub Homepage',
+                    'page_location': window.location.href,
+                    'page_path': window.location.pathname
+                });
+            }
+        });
+
+        // Render websites based on current filters
+        function renderWebsites() {
+            websitesGrid.innerHTML = '';
+            
+            const filteredWebsites = websitesData.filter(website => {
+                const matchesCategory = currentCategory === 'all' || website.category === currentCategory;
+                const matchesSearch = website.title.toLowerCase().includes(currentSearch.toLowerCase()) || 
+                                     website.description.toLowerCase().includes(currentSearch.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+            
+            if (filteredWebsites.length === 0) {
+                websitesGrid.innerHTML = `
+                    <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                        <i class="fas fa-search" style="font-size: 2rem; color: var(--gray); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--dark); margin-bottom: 0.5rem;">No results found</h3>
+                        <p style="color: var(--gray);">Try adjusting your search or filter criteria</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredWebsites.forEach(website => {
+                let badgeClass = '';
+                let btnClass = 'btn-primary';
+                
+                switch(website.category) {
+                    case 'hindu':
+                        badgeClass = 'hindu-badge';
+                        btnClass = 'btn-hindu';
+                        break;
+                    case 'muslim':
+                        badgeClass = 'muslim-badge';
+                        btnClass = 'btn-muslim';
+                        break;
+                    case 'christian':
+                        badgeClass = 'christian-badge';
+                        btnClass = 'btn-christian';
+                        break;
+                    default:
+                        badgeClass = 'other-badge';
+                        btnClass = 'btn-other';
+                }
+                
+                const websiteCard = document.createElement('div');
+                websiteCard.className = 'website-card';
+                websiteCard.innerHTML = `
+                    <div class="card-image" style="background-image: url('${website.image}')" aria-label="${website.title}">
+                        <span class="card-badge ${badgeClass}">${website.category.charAt(0).toUpperCase() + website.category.slice(1)}</span>
+                        <button class="card-favorite ${favorites.find(f => f.id === website.id) ? 'active' : ''}" onclick="toggleFavorite(${website.id})" title="Add to favorites">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">${website.title}</h3>
+                        <p class="card-description">${website.description}</p>
+                        <div class="card-footer">
+                            <a href="${website.link}" class="btn ${btnClass}">
+                                Open <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <span class="view-count">
+                                <i class="fas fa-eye"></i> ${website.views}
+                            </span>
+                        </div>
+                    </div>
+                `;
+                
+                websitesGrid.appendChild(websiteCard);
+            });
+        }
+
+        // Render events slider
+        function renderEvents() {
+            eventsSlider.innerHTML = '';
+            
+            eventsData.forEach(event => {
+                let bgColor = 'var(--primary)';
+                
+                switch(event.category) {
+                    case 'hindu':
+                        bgColor = 'var(--hindu)';
+                        break;
+                    case 'muslim':
+                        bgColor = 'var(--muslim)';
+                        break;
+                    case 'christian':
+                        bgColor = 'var(--christian)';
+                        break;
+                    case 'other':
+                        bgColor = 'var(--other)';
+                }
+                
+                const eventCard = document.createElement('div');
+                eventCard.className = 'event-card';
+                eventCard.innerHTML = `
+                    <div class="event-date" style="background: ${bgColor}">
+                        <div class="event-day">${event.day}</div>
+                        <div class="event-month">${event.month}</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">${event.title}</h3>
+                        <p class="event-description">${event.description}</p>
+                        <a href="#" class="btn" style="background: ${bgColor}; color: white; padding: 0.5rem 1rem; font-size: 0.8rem;">
+                            View Wishes <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                `;
+                
+                eventsSlider.appendChild(eventCard);
+            });
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Category filter buttons
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.category;
+                    
+                    // Track category filter
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'select_content', {
+                            'content_type': 'category',
+                            'item_id': currentCategory
+                        });
+                    }
+                    
+                    renderWebsites();
+                });
+            });
+            
+            // Search functionality
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Newsletter form
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                if (email) {
+                    // Track newsletter signup
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'generate_lead', {
+                            'method': 'newsletter_signup'
+                        });
+                    }
+                    
+                    alert(`Thank you for subscribing to BYAMN Festhub!\nYou'll receive updates on upcoming festivals.`);
+                    this.querySelector('input').value = '';
+                }
+            });
+            
+            // Modal close button
+            modalClose.addEventListener('click', closeFestivalModal);
+            
+            // Close modal when clicking outside
+            festivalModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeFestivalModal();
+                }
+            });
+            
+            // Wish Now button
+            modalWishNow.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentFestival) {
+                    // Track wish now action
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'select_content', {
+                            'content_type': 'festival_wish',
+                            'item_id': currentFestival.title
+                        });
+                    }
+                    
+                    alert(`Redirecting to ${currentFestival.title} wishes page...`);
+                    closeFestivalModal();
+                }
+            });
+            
+            // Leave Review button
+            modalLeaveReview.addEventListener('click', function() {
+                closeFestivalModal();
+                openReviewModal();
+            });
+            
+            // Review modal close button
+            reviewModalClose.addEventListener('click', closeReviewModal);
+            
+            // Close review modal when clicking outside
+            reviewModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeReviewModal();
+                }
+            });
+            
+            // Rating stars
+            const stars = ratingStars.querySelectorAll('.rating-star');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    setRating(rating);
+                });
+                
+                star.addEventListener('mouseover', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    highlightStars(rating);
+                });
+                
+                star.addEventListener('mouseout', function() {
+                    highlightStars(currentRating);
+                });
+            });
+            
+            // Submit review
+            submitReview.addEventListener('click', function() {
+                if (currentRating === 0) {
+                    alert('Please select a rating');
+                    return;
+                }
+                
+                const review = reviewText.value.trim();
+                if (!review) {
+                    alert('Please write your review');
+                    return;
+                }
+                
+                // In a real app, you would send this to your backend
+                console.log('Review submitted:', {
+                    festival: currentFestival.title,
+                    rating: currentRating,
+                    review: review
+                });
+                
+                // Track review submission
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'rate_content', {
+                        'content_type': 'festival',
+                        'item_id': currentFestival.title,
+                        'rating': currentRating
+                    });
+                }
+                
+                alert('Thank you for your review!');
+                closeReviewModal();
+            });
+        }
+        
+        // Setup navigation event listeners
+        function setupNavigationEventListeners() {
+            // Header search button
+            headerSearchBtn.addEventListener('click', function() {
+                searchInput.focus();
+                searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            
+            // Quick navigation pills
+            quickNavPills.forEach(pill => {
+                pill.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const category = this.dataset.category;
+                    
+                    // Update active category
+                    categoryBtns.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.dataset.category === category) {
+                            btn.classList.add('active');
+                        }
+                    });
+                    
+                    currentCategory = category;
+                    updateBreadcrumb(this.textContent);
+                    renderWebsites();
+                    
+                    // Scroll to categories section
+                    document.querySelector('.categories-section').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                });
+            });
+            
+            // Favorites button
+            favoritesBtn.addEventListener('click', function() {
+                showFavoritesModal();
+            });
+            
+            // Notifications button
+            notificationsBtn.addEventListener('click', function() {
+                toggleNotificationSection();
+            });
+            
+            // Menu toggle
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && e.target !== menuToggle) {
+                    navMenu.classList.remove('show');
+                }
+            });
+            
+            // Menu item clicks
+            document.querySelectorAll('.fx-nav-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#categories') {
+                        document.querySelector('.categories-section').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    } else if (href === '#calendar') {
+                        document.querySelector('.events-section').scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    } else if (href === '#trending') {
+                        currentCategory = 'all';
+                        currentSearch = '';
+                        searchInput.value = '';
+                        updateBreadcrumb('Trending');
+                        renderWebsites();
+                    } else if (href === 'file.html') {
+                        window.open('file.html', '_blank');
+                    } else {
+                        // Handle other navigation items
+                        console.log('Navigating to:', href);
+                        alert(`Navigating to ${this.textContent.trim()}`);
+                    }
+                    
+                    navMenu.classList.remove('show');
+                });
+            });
+        }
+        
+        // Update breadcrumb
+        function updateBreadcrumb(pageName) {
+            currentPageBreadcrumb.textContent = pageName;
+        }
+        
+        // Update favorites count
+        function updateFavoritesCount() {
+            favoritesCount.textContent = favorites.length;
+            if (favorites.length === 0) {
+                favoritesCount.style.display = 'none';
+            } else {
+                favoritesCount.style.display = 'flex';
+            }
+        }
+        
+        // Update notification count
+        function updateNotificationCount() {
+            const unreadCount = notificationsData.filter(n => !n.read).length;
+            notificationCount.textContent = unreadCount;
+            if (unreadCount === 0) {
+                notificationCount.style.display = 'none';
+            } else {
+                notificationCount.style.display = 'flex';
+            }
+        }
+        
+        // Setup notification system event listeners
+        function setupNotificationSystem() {
+            // Close notification section
+            notificationCloseBtn.addEventListener('click', function() {
+                closeNotificationSection();
+            });
+            
+            // Mark all as read
+            markAllReadBtn.addEventListener('click', function() {
+                markAllNotificationsAsRead();
+            });
+            
+            // Clear all notifications
+            clearAllBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to clear all notifications?')) {
+                    clearAllNotifications();
+                }
+            });
+            
+            // Toggle older notifications
+            olderNotificationsToggle.addEventListener('click', function() {
+                toggleOlderNotifications();
+            });
+            
+            // Close notification section when clicking outside
+            document.addEventListener('click', function(e) {
+                if (isNotificationSectionOpen && 
+                    !notificationSection.contains(e.target) && 
+                    e.target !== notificationsBtn) {
+                    closeNotificationSection();
+                }
+            });
+        }
+        
+        // Load notifications from JSON file
+        async function loadNotifications() {
+            try {
+                const response = await fetch('./notifications.json');
+                if (response.ok) {
+                    notificationsData = await response.json();
+                    // Load read status from localStorage
+                    const readNotifications = JSON.parse(localStorage.getItem('festhub-read-notifications') || '[]');
+                    notificationsData.forEach(notification => {
+                        if (readNotifications.includes(notification.id)) {
+                            notification.read = true;
+                        }
+                    });
+                    updateNotificationCount();
+                    renderNotifications();
+                    
+                    // Start checking for new notifications
+                    startNotificationChecking();
+                } else {
+                    console.warn('Failed to load notifications');
+                }
+            } catch (error) {
+                console.error('Error loading notifications:', error);
+                // Use fallback notifications
+                notificationsData = [
+                    {
+                        id: 1,
+                        title: '🎄 Welcome to BYAMN Festhub!',
+                        message: 'Explore our amazing collection of festival wishes and greeting cards.',
+                        type: 'info',
+                        timestamp: new Date().toISOString(),
+                        link: '#categories',
+                        read: false
+                    }
+                ];
+                updateNotificationCount();
+                renderNotifications();
+            }
+        }
+        
+        // Toggle notification section visibility
+        function toggleNotificationSection() {
+            if (isNotificationSectionOpen) {
+                closeNotificationSection();
+            } else {
+                openNotificationSection();
+            }
+        }
+        
+        // Open notification section
+        function openNotificationSection() {
+            notificationSection.classList.add('show');
+            isNotificationSectionOpen = true;
+            renderNotifications();
+        }
+        
+        // Close notification section
+        function closeNotificationSection() {
+            notificationSection.classList.remove('show');
+            isNotificationSectionOpen = false;
+        }
+        
+        // Render notifications in the list
+        function renderNotifications() {
+            if (!notificationsData || notificationsData.length === 0) {
+                notificationList.innerHTML = `
+                    <div class="notification-empty">
+                        <i class="fas fa-bell-slash"></i>
+                        <p>No notifications yet</p>
+                    </div>
+                `;
+                notificationSummary.innerHTML = 'No notifications';
+                olderNotificationsSection.style.display = 'none';
+                return;
+            }
+            
+            // Sort notifications by timestamp (most recent first)
+            const sortedNotifications = [...notificationsData].sort((a, b) => 
+                new Date(b.timestamp) - new Date(a.timestamp)
+            );
+            
+            // Split into recent and older notifications
+            const recentNotifications = sortedNotifications.slice(0, 5);
+            const olderNotifications = sortedNotifications.slice(5);
+            
+            // Update summary
+            const unreadCount = notificationsData.filter(n => !n.read).length;
+            const totalCount = notificationsData.length;
+            notificationSummary.innerHTML = `${unreadCount} unread of ${totalCount} total notifications`;
+            
+            // Render recent notifications
+            notificationList.innerHTML = '';
+            recentNotifications.forEach(notification => {
+                const notificationElement = createNotificationElement(notification);
+                notificationList.appendChild(notificationElement);
+            });
+            
+            // Handle older notifications section
+            if (olderNotifications.length > 0) {
+                olderNotificationsSection.style.display = 'block';
+                olderNotificationsToggle.querySelector('span').textContent = 
+                    `Show ${olderNotifications.length} older notifications`;
+                
+                // Render older notifications in collapsed content
+                olderNotificationsContent.innerHTML = '';
+                olderNotifications.forEach(notification => {
+                    const notificationElement = createNotificationElement(notification);
+                    olderNotificationsContent.appendChild(notificationElement);
+                });
+            } else {
+                olderNotificationsSection.style.display = 'none';
+            }
+        }
+        
+        // Create a notification DOM element
+        function createNotificationElement(notification) {
+            const notificationDiv = document.createElement('div');
+            notificationDiv.className = `notification-item ${!notification.read ? 'unread' : ''}`;
+            notificationDiv.dataset.notificationId = notification.id;
+            
+            const timeAgo = getTimeAgo(notification.timestamp);
+            const typeIcon = getNotificationTypeIcon(notification.type);
+            
+            notificationDiv.innerHTML = `
+                <div class="notification-content">
+                    ${notification.image ? `<img src="${notification.image}" alt="Notification image" class="notification-image">` : ''}
+                    <h4 class="notification-item-title">${notification.title}</h4>
+                    <p class="notification-item-message">${notification.message}</p>
+                    ${notification.link ? `<a href="${notification.link}" class="notification-link" onclick="handleNotificationLink(event, '${notification.link}', ${notification.id})">
+                        <i class="fas fa-external-link-alt"></i> View Details
+                    </a>` : ''}
+                    <div class="notification-meta">
+                        <span class="notification-time">${timeAgo}</span>
+                        <span class="notification-type-badge notification-type-${notification.type}">
+                            ${typeIcon} ${notification.type}
+                        </span>
+                    </div>
+                    <div class="notification-actions-item">
+                        ${!notification.read ? 
+                            `<button class="notification-btn notification-btn-read" onclick="markNotificationAsRead(${notification.id})">
+                                <i class="fas fa-check"></i> Mark as read
+                            </button>` : ''}
+                        <button class="notification-btn notification-btn-dismiss" onclick="dismissNotification(${notification.id})">
+                            <i class="fas fa-times"></i> Dismiss
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Add click handler to mark as read when clicked (but not on links or buttons)
+            notificationDiv.addEventListener('click', function(e) {
+                if (!e.target.closest('.notification-actions-item') && 
+                    !e.target.closest('.notification-link') && 
+                    !notification.read) {
+                    markNotificationAsRead(notification.id);
+                }
+            });
+            
+            return notificationDiv;
+        }
+        
+        // Get notification type icon
+        function getNotificationTypeIcon(type) {
+            const icons = {
+                'info': 'ℹ️',
+                'success': '✅',
+                'warning': '⚠️',
+                'error': '❌'
+            };
+            return icons[type] || 'ℹ️';
+        }
+        
+        // Get human-readable time ago
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const notificationTime = new Date(timestamp);
+            const diffInSeconds = Math.floor((now - notificationTime) / 1000);
+            
+            if (diffInSeconds < 60) {
+                return 'Just now';
+            } else if (diffInSeconds < 3600) {
+                const minutes = Math.floor(diffInSeconds / 60);
+                return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+            } else if (diffInSeconds < 86400) {
+                const hours = Math.floor(diffInSeconds / 3600);
+                return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+            } else if (diffInSeconds < 604800) {
+                const days = Math.floor(diffInSeconds / 86400);
+                return `${days} day${days !== 1 ? 's' : ''} ago`;
+            } else {
+                return notificationTime.toLocaleDateString();
+            }
+        }
+        
+        // Mark a specific notification as read
+        function markNotificationAsRead(notificationId) {
+            const notification = notificationsData.find(n => n.id === notificationId);
+            if (notification && !notification.read) {
+                notification.read = true;
+                saveReadNotifications();
+                updateNotificationCount();
+                renderNotifications();
+            }
+        }
+        
+        // Mark all notifications as read
+        function markAllNotificationsAsRead() {
+            notificationsData.forEach(notification => {
+                notification.read = true;
+            });
+            saveReadNotifications();
+            updateNotificationCount();
+            renderNotifications();
+        }
+        
+        // Dismiss a specific notification
+        function dismissNotification(notificationId) {
+            notificationsData = notificationsData.filter(n => n.id !== notificationId);
+            updateNotificationCount();
+            renderNotifications();
+            
+            // Also remove from read notifications localStorage
+            const readNotifications = JSON.parse(localStorage.getItem('festhub-read-notifications') || '[]');
+            const updatedReadNotifications = readNotifications.filter(id => id !== notificationId);
+            localStorage.setItem('festhub-read-notifications', JSON.stringify(updatedReadNotifications));
+        }
+        
+        // Clear all notifications
+        function clearAllNotifications() {
+            notificationsData = [];
+            updateNotificationCount();
+            renderNotifications();
+            localStorage.removeItem('festhub-read-notifications');
+        }
+        
+        // Toggle older notifications visibility
+        function toggleOlderNotifications() {
+            const content = olderNotificationsContent;
+            const icon = olderNotificationsToggle.querySelector('i');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                olderNotificationsToggle.querySelector('span').textContent = 
+                    olderNotificationsToggle.querySelector('span').textContent.replace('Hide', 'Show');
+            } else {
+                content.classList.add('expanded');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                olderNotificationsToggle.querySelector('span').textContent = 
+                    olderNotificationsToggle.querySelector('span').textContent.replace('Show', 'Hide');
+            }
+        }
+        
+        // Save read notifications to localStorage
+        function saveReadNotifications() {
+            const readNotifications = notificationsData
+                .filter(n => n.read)
+                .map(n => n.id);
+            localStorage.setItem('festhub-read-notifications', JSON.stringify(readNotifications));
+        }
+        
+        // Show notification toast
+        function showNotificationToast(notification) {
+            toastTitle.textContent = notification.title;
+            toastMessage.textContent = notification.message;
+            
+            // Set icon based on type
+            const iconElement = toastIcon.querySelector('i');
+            toastIcon.className = `toast-icon ${notification.type}`;
+            
+            const iconMap = {
+                'info': 'fas fa-info-circle',
+                'success': 'fas fa-check-circle',
+                'warning': 'fas fa-exclamation-triangle',
+                'error': 'fas fa-exclamation-circle'
+            };
+            
+            iconElement.className = iconMap[notification.type] || 'fas fa-bell';
+            
+            // Show toast
+            notificationToast.classList.add('show');
+            
+            // Hide toast after 5 seconds
+            setTimeout(() => {
+                notificationToast.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Start checking for new notifications (simulate real-time updates)
+        function startNotificationChecking() {
+            // Check every 30 seconds for new notifications
+            notificationCheckInterval = setInterval(async () => {
+                try {
+                    const response = await fetch('./notifications.json');
+                    if (response.ok) {
+                        const freshNotifications = await response.json();
+                        
+                        // Check for new notifications
+                        const currentIds = notificationsData.map(n => n.id);
+                        const newNotifications = freshNotifications.filter(n => !currentIds.includes(n.id));
+                        
+                        if (newNotifications.length > 0) {
+                            // Add new notifications
+                            notificationsData = [...newNotifications, ...notificationsData];
+                            updateNotificationCount();
+                            
+                            // Show toast for the most recent new notification
+                            if (newNotifications.length > 0) {
+                                const latestNotification = newNotifications.sort((a, b) => 
+                                    new Date(b.timestamp) - new Date(a.timestamp)
+                                )[0];
+                                showNotificationToast(latestNotification);
+                            }
+                            
+                            // Re-render if notification section is open
+                            if (isNotificationSectionOpen) {
+                                renderNotifications();
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error checking for new notifications:', error);
+                }
+            }, 30000); // Check every 30 seconds
+        }
+        
+        // Make functions globally accessible
+        window.markNotificationAsRead = markNotificationAsRead;
+        window.dismissNotification = dismissNotification;
+        window.handleNotificationLink = handleNotificationLink;
+        
+        // Handle notification link clicks
+        function handleNotificationLink(event, link, notificationId) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // Mark notification as read when link is clicked
+            markNotificationAsRead(notificationId);
+            
+            // Handle different types of links
+            if (link.startsWith('#')) {
+                // Internal anchor link
+                const element = document.querySelector(link);
+                if (element) {
+                    closeNotificationSection();
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    console.warn('Anchor element not found:', link);
+                }
+            } else if (link.startsWith('http://') || link.startsWith('https://')) {
+                // External link
+                window.open(link, '_blank');
+                closeNotificationSection();
+            } else {
+                // Internal page link
+                closeNotificationSection();
+                window.location.href = link;
+            }
+        }
+        
+        // Show favorites modal
+        function showFavoritesModal() {
+            if (favorites.length === 0) {
+                alert('You haven\'t added any festivals to favorites yet!\n\nClick the heart icon on any festival card to add it to your favorites.');
+                return;
+            }
+            
+            const favoriteItems = favorites.map(fav => `• ${fav.title}`).join('\n');
+            alert(`Your Favorite Festivals:\n\n${favoriteItems}`);
+        }
+
+        
+        // Add to favorites
+        function addToFavorites(festival) {
+            if (!favorites.find(f => f.id === festival.id)) {
+                favorites.push(festival);
+                localStorage.setItem('festhub-favorites', JSON.stringify(favorites));
+                updateFavoritesCount();
+                return true;
+            }
+            return false;
+        }
+        
+        // Remove from favorites
+        function removeFromFavorites(festivalId) {
+            favorites = favorites.filter(f => f.id !== festivalId);
+            localStorage.setItem('festhub-favorites', JSON.stringify(favorites));
+            updateFavoritesCount();
+        }
+        
+        // Global toggle favorite function (called from card onclick)
+        function toggleFavorite(festivalId) {
+            const festival = websitesData.find(w => w.id === festivalId);
+            if (!festival) return;
+            
+            const favoriteBtn = document.querySelector(`[onclick="toggleFavorite(${festivalId})"]`);
+            
+            if (favorites.find(f => f.id === festivalId)) {
+                removeFromFavorites(festivalId);
+                favoriteBtn.classList.remove('active');
+                favoriteBtn.title = 'Add to favorites';
+            } else {
+                addToFavorites(festival);
+                favoriteBtn.classList.add('active');
+                favoriteBtn.title = 'Remove from favorites';
+            }
+        }
+        
+        // Make toggleFavorite globally accessible
+        window.toggleFavorite = toggleFavorite;
+
+        // Perform search
+        function performSearch() {
+            currentSearch = searchInput.value.trim();
+            
+            // Track search queries
+            if (typeof gtag !== 'undefined' && currentSearch) {
+                gtag('event', 'search', {
+                    'search_term': currentSearch
+                });
+            }
+            
+            renderWebsites();
+        }
+        
+        // Check for festivals happening today
+        function checkTodayFestivals() {
+            const today = new Date();
+            const currentMonth = today.toLocaleString('default', { month: 'short' });
+            const currentDay = today.getDate().toString();
+            
+            const todaysFestivals = eventsData.filter(event => {
+                return event.day === currentDay && event.month === currentMonth;
+            });
+            
+            if (todaysFestivals.length > 0) {
+                // Show a popup for the first festival happening today
+                showFestivalModal(todaysFestivals[0]);
+            }
+        }
+        
+        // Show festival modal
+        function showFestivalModal(festival) {
+            currentFestival = festival;
+            
+            // Set modal content
+            modalFestivalTitle.textContent = festival.title;
+            modalFestivalDate.textContent = `${festival.day} ${festival.month} 2025`;
+            modalFestivalDesc.textContent = festival.description;
+            
+            // Set modal color based on category
+            let bgColor = 'var(--primary)';
+            switch(festival.category) {
+                case 'hindu':
+                    bgColor = 'var(--hindu)';
+                    break;
+                case 'muslim':
+                    bgColor = 'var(--muslim)';
+                    break;
+                case 'christian':
+                    bgColor = 'var(--christian)';
+                    break;
+                case 'other':
+                    bgColor = 'var(--other)';
+            }
+            
+            modalFestivalDate.style.background = bgColor;
+            modalWishNow.style.background = bgColor;
+            
+            // Show modal
+            festivalModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close festival modal
+        function closeFestivalModal() {
+            festivalModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Open review modal
+        function openReviewModal() {
+            reviewModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close review modal
+        function closeReviewModal() {
+            reviewModal.classList.remove('active');
+            document.body.style.overflow = '';
+            resetReviewForm();
+        }
+        
+        // Set rating
+        function setRating(rating) {
+            currentRating = rating;
+            highlightStars(rating);
+        }
+        
+        // Highlight stars up to the given rating
+        function highlightStars(rating) {
+            const stars = ratingStars.querySelectorAll('.rating-star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.remove('far');
+                    star.classList.add('fas');
+                } else {
+                    star.classList.remove('fas');
+                    star.classList.add('far');
+                }
+            });
+        }
+        
+        // Reset review form
+        function resetReviewForm() {
+            currentRating = 0;
+            highlightStars(0);
+            reviewText.value = '';
+        }
+        
+        // Auto-scroll events
+        function startAutoScroll() {
+            // Clone the events to create a seamless loop
+            const eventsContainer = eventsSlider;
+            const events = Array.from(eventsContainer.children);
+            
+            // Duplicate events for seamless looping
+            events.forEach(event => {
+                const clone = event.cloneNode(true);
+                eventsContainer.appendChild(clone);
+            });
+            
+            let scrollAmount = 0;
+            const scrollSpeed = 1; // pixels per interval
+            
+            scrollInterval = setInterval(() => {
+                scrollAmount += scrollSpeed;
+                eventsContainer.scrollLeft = scrollAmount;
+                
+                // Reset scroll position when reaching the end
+                if (scrollAmount >= eventsContainer.scrollWidth / 2) {
+                    scrollAmount = 0;
+                    eventsContainer.scrollLeft = 0;
+                }
+            }, 30);
+            
+            // Pause on hover
+            eventsContainer.addEventListener('mouseenter', () => {
+                clearInterval(scrollInterval);
+            });
+            
+            eventsContainer.addEventListener('mouseleave', () => {
+                scrollInterval = setInterval(() => {
+                    scrollAmount += scrollSpeed;
+                    eventsContainer.scrollLeft = scrollAmount;
+                    
+                    // Reset scroll position when reaching the end
+                    if (scrollAmount >= eventsContainer.scrollWidth / 2) {
+                        scrollAmount = 0;
+                        eventsContainer.scrollLeft = 0;
+                    }
+                }, 30);
+            });
+        }
+    </script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "BYAMN Festhub",
+      "url": "https://byamn.vercel.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://byamn.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "Create and share beautiful festival wishes for Diwali, Eid, Christmas, Holi and more. Custom greeting cards for all occasions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "BYAMN Festhub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://byamn.vercel.app/logo.png"
+        }
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://byamn.vercel.app"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "All Festival Wishes"
+      }]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHQ34PSHTY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LHQ34PSHTY'); // Replace with your GA4 ID
+    </script>
+</body>
+</html>
+
