@@ -1,17 +1,27 @@
-<<<<<<< HEAD
 User-agent: *
 Allow: /
 
 # Sitemap location (update with your actual domain)
-Sitemap: https://yourusername.github.io/byamn-festhub/sitemap.xml
+Sitemap: https://yourdomain.vercel.app/sitemap.xml
 
 # Specific pages
 Allow: /index.html
 Allow: /Christmas.html
 Allow: /Janmashtami.html
+Allow: /Diwali.html
+Allow: /Dussehra.html
+Allow: /Eid.html
+Allow: /GaneshChaturthi.html
+Allow: /Holi.html
+Allow: /MahaShivaratri.html
+Allow: /Navratri.html
+Allow: /RakshaBandhan.html
 
 # Allow assets
 Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /images/
 Allow: /logo.png
 
 # Disallow utility pages from search engines
@@ -19,26 +29,4 @@ Disallow: /file.html
 Disallow: /redirect.html
 
 # SEO optimizations
-=======
-User-agent: *
-Allow: /
-
-# Sitemap location (update with your actual domain)
-Sitemap: https://yourusername.github.io/byamn-festhub/sitemap.xml
-
-# Specific pages
-Allow: /index.html
-Allow: /Christmas.html
-Allow: /Janmashtami.html
-
-# Allow assets
-Allow: /assets/
-Allow: /logo.png
-
-# Disallow utility pages from search engines
-Disallow: /file.html
-Disallow: /redirect.html
-
-# SEO optimizations
->>>>>>> origin/main
 Crawl-delay: 1
