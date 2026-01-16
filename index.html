@@ -1,70 +1,78 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BYAMN Festhub - Free Greeting Cards</title>
-    <meta name="description" content="BYAMN Festhub - Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi & more. 1000+ free customizable greeting card templates for all occasions.">
-    <meta name="keywords" content="BYAMN Festhub, festival wishes, Diwali cards, Eid greetings, Christmas wishes, Holi messages, free greeting cards, Indian festivals">
+    <meta name="description"
+        content="BYAMN Festhub - Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi & more. 1000+ free customizable greeting card templates for all occasions.">
+    <meta name="keywords"
+        content="BYAMN Festhub, festival wishes, Diwali cards, Eid greetings, Christmas wishes, Holi messages, free greeting cards, Indian festivals">
     <meta name="author" content="BYAMN Festhub">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://byamn.vercel.app/">
     <meta property="og:title" content="BYAMN Festhub - Best Festival Wishes for All Occasions">
-    <meta property="og:description" content="Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi and more. Free customizable greeting cards.">
+    <meta property="og:description"
+        content="Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi and more. Free customizable greeting cards.">
     <meta property="og:image" content="https://byamn.vercel.app/images/social-preview.jpg">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://byamn.vercel.app/">
     <meta property="twitter:title" content="BYAMN Festhub - Best Festival Wishes for All Occasions">
-    <meta property="twitter:description" content="Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi and more. Free customizable greeting cards.">
+    <meta property="twitter:description"
+        content="Create & share beautiful festival wishes for Diwali, Eid, Christmas, Holi and more. Free customizable greeting cards.">
     <meta property="twitter:image" content="https://byamn.vercel.app/images/social-preview.jpg">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://byamn.vercel.app/">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./logo.png">
-    
+
     <!-- Preconnect to important domains -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Tangerine:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Tangerine:wght@700&family=Kalam:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- Header Section with H1 for SEO -->
     <header class="fx-header">
-      <div class="fx-header-inner">
-        <div class="fx-logo-group">
-          <img src="./logo.png" alt="BYAMN" class="fx-logo">
-          <span class="fx-brand">
-            <span class="fx-brand-name">BYAMN Festhub</span>
-            <span class="fx-brand-tag">Festivals</span>
-          </span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#events">Calendar</a></li>
-                <li><a href="file.html">URL Shortener</a></li>
-            </ul>
-        </nav>
-        <div class="header-actions">
-            <button class="icon-btn" id="favoritesBtn" title="Favorites">
-                <i class="far fa-heart"></i>
-                <span class="badge" id="favoritesCount" style="display: none;">0</span>
-            </button>
-            <button class="icon-btn" id="notificationsBtn" title="Notifications">
-                <i class="far fa-bell"></i>
-                <span class="badge" id="notificationCount" style="display: none;">0</span>
-            </button>
-        </div>
+        <div class="fx-header-inner">
+            <div class="fx-logo-group logo">
+                <img src="./logo.png" alt="BYAMN" class="fx-logo">
+                <span class="fx-brand">
+                    <h1 class="fx-brand-name">BYAMN Festhub</h1>
+                    <span class="fx-brand-tag">Festivals</span>
+                </span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#events">Calendar</a></li>
+                    <li><a href="file.html">URL Shortener</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="favoritesBtn" title="Favorites">
+                    <i class="far fa-heart"></i>
+                    <span class="badge" id="favoritesCount" style="display: none;">0</span>
+                </button>
+                <button class="icon-btn" id="notificationsBtn" title="Notifications">
+                    <i class="far fa-bell"></i>
+                    <span class="badge" id="notificationCount" style="display: none;">0</span>
+                </button>
+            </div>
     </header>
 
     <main>
@@ -72,7 +80,8 @@
             <h2>Celebrate Every Moment</h2>
             <p>Create and share beautiful festival greetings with your loved ones</p>
             <div class="search-container">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search for festivals (e.g., Diwali, Eid)...">
+                <input type="text" class="search-input" id="searchInput"
+                    placeholder="Search for festivals (e.g., Diwali, Eid)...">
                 <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
             </div>
         </section>
@@ -135,11 +144,13 @@
             <p id="modalDate" class="event-date">Date</p>
             <p id="modalDescription">Description</p>
             <div style="margin-top: 2rem; text-align: center;">
-                <a href="#" id="modalLink" class="btn-visit" style="display: inline-block; padding: 10px 20px;">Create Wish</a>
+                <a href="#" id="modalLink" class="btn-visit" style="display: inline-block; padding: 10px 20px;">Create
+                    Wish</a>
             </div>
         </div>
     </div>
 
+    <script>
         // Current filter state
         let currentCategory = 'all';
         let currentSearch = '';
@@ -152,7 +163,7 @@
         let notificationCheckInterval = null;
 
         // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             renderWebsites();
             renderEvents();
             setupEventListeners();
@@ -163,7 +174,7 @@
             startAutoScroll();
             updateFavoritesCount();
             updateNotificationCount();
-            
+
             // Track page view
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'page_view', {
@@ -177,14 +188,14 @@
         // Render websites based on current filters
         function renderWebsites() {
             websitesGrid.innerHTML = '';
-            
+
             const filteredWebsites = websitesData.filter(website => {
                 const matchesCategory = currentCategory === 'all' || website.category === currentCategory;
-                const matchesSearch = website.title.toLowerCase().includes(currentSearch.toLowerCase()) || 
-                                     website.description.toLowerCase().includes(currentSearch.toLowerCase());
+                const matchesSearch = website.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    website.description.toLowerCase().includes(currentSearch.toLowerCase());
                 return matchesCategory && matchesSearch;
             });
-            
+
             if (filteredWebsites.length === 0) {
                 websitesGrid.innerHTML = `
                     <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 2rem;">
@@ -195,12 +206,12 @@
                 `;
                 return;
             }
-            
+
             filteredWebsites.forEach(website => {
                 let badgeClass = '';
                 let btnClass = 'btn-primary';
-                
-                switch(website.category) {
+
+                switch (website.category) {
                     case 'hindu':
                         badgeClass = 'hindu-badge';
                         btnClass = 'btn-hindu';
@@ -217,7 +228,7 @@
                         badgeClass = 'other-badge';
                         btnClass = 'btn-other';
                 }
-                
+
                 const websiteCard = document.createElement('div');
                 websiteCard.className = 'website-card';
                 websiteCard.innerHTML = `
@@ -240,7 +251,7 @@
                         </div>
                     </div>
                 `;
-                
+
                 websitesGrid.appendChild(websiteCard);
             });
         }
@@ -248,11 +259,11 @@
         // Render events slider
         function renderEvents() {
             eventsSlider.innerHTML = '';
-            
+
             eventsData.forEach(event => {
                 let bgColor = 'var(--primary)';
-                
-                switch(event.category) {
+
+                switch (event.category) {
                     case 'hindu':
                         bgColor = 'var(--hindu)';
                         break;
@@ -265,7 +276,7 @@
                     case 'other':
                         bgColor = 'var(--other)';
                 }
-                
+
                 const eventCard = document.createElement('div');
                 eventCard.className = 'event-card';
                 eventCard.innerHTML = `
@@ -281,7 +292,7 @@
                         </a>
                     </div>
                 `;
-                
+
                 eventsSlider.appendChild(eventCard);
             });
         }
@@ -290,11 +301,11 @@
         function setupEventListeners() {
             // Category filter buttons
             categoryBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     categoryBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                     currentCategory = this.dataset.category;
-                    
+
                     // Track category filter
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'select_content', {
@@ -302,21 +313,21 @@
                             'item_id': currentCategory
                         });
                     }
-                    
+
                     renderWebsites();
                 });
             });
-            
+
             // Search functionality
             searchBtn.addEventListener('click', performSearch);
-            searchInput.addEventListener('keypress', function(e) {
+            searchInput.addEventListener('keypress', function (e) {
                 if (e.key === 'Enter') {
                     performSearch();
                 }
             });
-            
+
             // Newsletter form
-            newsletterForm.addEventListener('submit', function(e) {
+            newsletterForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const email = this.querySelector('input').value;
                 if (email) {
@@ -326,24 +337,24 @@
                             'method': 'newsletter_signup'
                         });
                     }
-                    
+
                     alert(`Thank you for subscribing to BYAMN Festhub!\nYou'll receive updates on upcoming festivals.`);
                     this.querySelector('input').value = '';
                 }
             });
-            
+
             // Modal close button
             modalClose.addEventListener('click', closeFestivalModal);
-            
+
             // Close modal when clicking outside
-            festivalModal.addEventListener('click', function(e) {
+            festivalModal.addEventListener('click', function (e) {
                 if (e.target === this) {
                     closeFestivalModal();
                 }
             });
-            
+
             // Wish Now button
-            modalWishNow.addEventListener('click', function(e) {
+            modalWishNow.addEventListener('click', function (e) {
                 e.preventDefault();
                 if (currentFestival) {
                     // Track wish now action
@@ -353,66 +364,66 @@
                             'item_id': currentFestival.title
                         });
                     }
-                    
+
                     alert(`Redirecting to ${currentFestival.title} wishes page...`);
                     closeFestivalModal();
                 }
             });
-            
+
             // Leave Review button
-            modalLeaveReview.addEventListener('click', function() {
+            modalLeaveReview.addEventListener('click', function () {
                 closeFestivalModal();
                 openReviewModal();
             });
-            
+
             // Review modal close button
             reviewModalClose.addEventListener('click', closeReviewModal);
-            
+
             // Close review modal when clicking outside
-            reviewModal.addEventListener('click', function(e) {
+            reviewModal.addEventListener('click', function (e) {
                 if (e.target === this) {
                     closeReviewModal();
                 }
             });
-            
+
             // Rating stars
             const stars = ratingStars.querySelectorAll('.rating-star');
             stars.forEach(star => {
-                star.addEventListener('click', function() {
+                star.addEventListener('click', function () {
                     const rating = parseInt(this.dataset.rating);
                     setRating(rating);
                 });
-                
-                star.addEventListener('mouseover', function() {
+
+                star.addEventListener('mouseover', function () {
                     const rating = parseInt(this.dataset.rating);
                     highlightStars(rating);
                 });
-                
-                star.addEventListener('mouseout', function() {
+
+                star.addEventListener('mouseout', function () {
                     highlightStars(currentRating);
                 });
             });
-            
+
             // Submit review
-            submitReview.addEventListener('click', function() {
+            submitReview.addEventListener('click', function () {
                 if (currentRating === 0) {
                     alert('Please select a rating');
                     return;
                 }
-                
+
                 const review = reviewText.value.trim();
                 if (!review) {
                     alert('Please write your review');
                     return;
                 }
-                
+
                 // In a real app, you would send this to your backend
                 console.log('Review submitted:', {
                     festival: currentFestival.title,
                     rating: currentRating,
                     review: review
                 });
-                
+
                 // Track review submission
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'rate_content', {
@@ -421,26 +432,26 @@
                         'rating': currentRating
                     });
                 }
-                
+
                 alert('Thank you for your review!');
                 closeReviewModal();
             });
         }
-        
+
         // Setup navigation event listeners
         function setupNavigationEventListeners() {
             // Header search button
-            headerSearchBtn.addEventListener('click', function() {
+            headerSearchBtn.addEventListener('click', function () {
                 searchInput.focus();
                 searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
-            
+
             // Quick navigation pills
             quickNavPills.forEach(pill => {
-                pill.addEventListener('click', function(e) {
+                pill.addEventListener('click', function (e) {
                     e.preventDefault();
                     const category = this.dataset.category;
-                    
+
                     // Update active category
                     categoryBtns.forEach(btn => {
                         btn.classList.remove('active');
@@ -448,57 +459,57 @@
                             btn.classList.add('active');
                         }
                     });
-                    
+
                     currentCategory = category;
                     updateBreadcrumb(this.textContent);
                     renderWebsites();
-                    
+
                     // Scroll to categories section
-                    document.querySelector('.categories-section').scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'start' 
+                    document.querySelector('.categories-section').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 });
             });
-            
+
             // Favorites button
-            favoritesBtn.addEventListener('click', function() {
+            favoritesBtn.addEventListener('click', function () {
                 showFavoritesModal();
             });
-            
+
             // Notifications button
-            notificationsBtn.addEventListener('click', function() {
+            notificationsBtn.addEventListener('click', function () {
                 toggleNotificationSection();
             });
-            
+
             // Menu toggle
-            menuToggle.addEventListener('click', function(e) {
+            menuToggle.addEventListener('click', function (e) {
                 e.stopPropagation();
                 navMenu.classList.toggle('show');
             });
-            
+
             // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 if (!navMenu.contains(e.target) && e.target !== menuToggle) {
                     navMenu.classList.remove('show');
                 }
             });
-            
+
             // Menu item clicks
             document.querySelectorAll('.fx-nav-item').forEach(item => {
-                item.addEventListener('click', function(e) {
+                item.addEventListener('click', function (e) {
                     e.preventDefault();
                     const href = this.getAttribute('href');
-                    
+
                     if (href === '#categories') {
-                        document.querySelector('.categories-section').scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'start' 
+                        document.querySelector('.categories-section').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
                         });
                     } else if (href === '#calendar') {
-                        document.querySelector('.events-section').scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'start' 
+                        document.querySelector('.events-section').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
                         });
                     } else if (href === '#trending') {
                         currentCategory = 'all';
@@ -513,17 +524,17 @@
                         console.log('Navigating to:', href);
                         alert(`Navigating to ${this.textContent.trim()}`);
                     }
-                    
+
                     navMenu.classList.remove('show');
                 });
             });
         }
-        
+
         // Update breadcrumb
         function updateBreadcrumb(pageName) {
             currentPageBreadcrumb.textContent = pageName;
         }
-        
+
         // Update favorites count
         function updateFavoritesCount() {
             favoritesCount.textContent = favorites.length;
@@ -533,7 +544,7 @@
                 favoritesCount.style.display = 'flex';
             }
         }
-        
+
         // Update notification count
         function updateNotificationCount() {
             const unreadCount = notificationsData.filter(n => !n.read).length;
@@ -544,41 +555,41 @@
                 notificationCount.style.display = 'flex';
             }
         }
-        
+
         // Setup notification system event listeners
         function setupNotificationSystem() {
             // Close notification section
-            notificationCloseBtn.addEventListener('click', function() {
+            notificationCloseBtn.addEventListener('click', function () {
                 closeNotificationSection();
             });
-            
+
             // Mark all as read
-            markAllReadBtn.addEventListener('click', function() {
+            markAllReadBtn.addEventListener('click', function () {
                 markAllNotificationsAsRead();
             });
-            
+
             // Clear all notifications
-            clearAllBtn.addEventListener('click', function() {
+            clearAllBtn.addEventListener('click', function () {
                 if (confirm('Are you sure you want to clear all notifications?')) {
                     clearAllNotifications();
                 }
             });
-            
+
             // Toggle older notifications
-            olderNotificationsToggle.addEventListener('click', function() {
+            olderNotificationsToggle.addEventListener('click', function () {
                 toggleOlderNotifications();
             });
-            
+
             // Close notification section when clicking outside
-            document.addEventListener('click', function(e) {
-                if (isNotificationSectionOpen && 
-                    !notificationSection.contains(e.target) && 
+            document.addEventListener('click', function (e) {
+                if (isNotificationSectionOpen &&
+                    !notificationSection.contains(e.target) &&
                     e.target !== notificationsBtn) {
                     closeNotificationSection();
                 }
             });
         }
-        
+
         // Load notifications from JSON file
         async function loadNotifications() {
             try {
@@ -594,7 +605,7 @@
                     });
                     updateNotificationCount();
                     renderNotifications();
-                    
+
                     // Start checking for new notifications
                     startNotificationChecking();
                 } else {
@@ -618,7 +629,7 @@
                 renderNotifications();
             }
         }
-        
+
         // Toggle notification section visibility
         function toggleNotificationSection() {
             if (isNotificationSectionOpen) {
@@ -627,20 +638,20 @@
                 openNotificationSection();
             }
         }
-        
+
         // Open notification section
         function openNotificationSection() {
             notificationSection.classList.add('show');
             isNotificationSectionOpen = true;
             renderNotifications();
         }
-        
+
         // Close notification section
         function closeNotificationSection() {
             notificationSection.classList.remove('show');
             isNotificationSectionOpen = false;
         }
-        
+
         // Render notifications in the list
         function renderNotifications() {
             if (!notificationsData || notificationsData.length === 0) {
@@ -654,34 +665,34 @@
                 olderNotificationsSection.style.display = 'none';
                 return;
             }
-            
+
             // Sort notifications by timestamp (most recent first)
-            const sortedNotifications = [...notificationsData].sort((a, b) => 
+            const sortedNotifications = [...notificationsData].sort((a, b) =>
                 new Date(b.timestamp) - new Date(a.timestamp)
             );
-            
+
             // Split into recent and older notifications
             const recentNotifications = sortedNotifications.slice(0, 5);
             const olderNotifications = sortedNotifications.slice(5);
-            
+
             // Update summary
             const unreadCount = notificationsData.filter(n => !n.read).length;
             const totalCount = notificationsData.length;
             notificationSummary.innerHTML = `${unreadCount} unread of ${totalCount} total notifications`;
-            
+
             // Render recent notifications
             notificationList.innerHTML = '';
             recentNotifications.forEach(notification => {
                 const notificationElement = createNotificationElement(notification);
                 notificationList.appendChild(notificationElement);
             });
-            
+
             // Handle older notifications section
             if (olderNotifications.length > 0) {
                 olderNotificationsSection.style.display = 'block';
-                olderNotificationsToggle.querySelector('span').textContent = 
+                olderNotificationsToggle.querySelector('span').textContent =
                     `Show ${olderNotifications.length} older notifications`;
-                
+
                 // Render older notifications in collapsed content
                 olderNotificationsContent.innerHTML = '';
                 olderNotifications.forEach(notification => {
@@ -692,16 +703,16 @@
                 olderNotificationsSection.style.display = 'none';
             }
         }
-        
+
         // Create a notification DOM element
         function createNotificationElement(notification) {
             const notificationDiv = document.createElement('div');
             notificationDiv.className = `notification-item ${!notification.read ? 'unread' : ''}`;
             notificationDiv.dataset.notificationId = notification.id;
-            
+
             const timeAgo = getTimeAgo(notification.timestamp);
             const typeIcon = getNotificationTypeIcon(notification.type);
-            
+
             notificationDiv.innerHTML = `
                 <div class="notification-content">
                     ${notification.image ? `<img src="${notification.image}" alt="Notification image" class="notification-image">` : ''}
@@ -717,8 +728,8 @@
                         </span>
                     </div>
                     <div class="notification-actions-item">
-                        ${!notification.read ? 
-                            `<button class="notification-btn notification-btn-read" onclick="markNotificationAsRead(${notification.id})">
+                        ${!notification.read ?
+                    `<button class="notification-btn notification-btn-read" onclick="markNotificationAsRead(${notification.id})">
                                 <i class="fas fa-check"></i> Mark as read
                             </button>` : ''}
                         <button class="notification-btn notification-btn-dismiss" onclick="dismissNotification(${notification.id})">
@@ -727,19 +738,19 @@
                     </div>
                 </div>
             `;
-            
+
             // Add click handler to mark as read when clicked (but not on links or buttons)
-            notificationDiv.addEventListener('click', function(e) {
-                if (!e.target.closest('.notification-actions-item') && 
-                    !e.target.closest('.notification-link') && 
+            notificationDiv.addEventListener('click', function (e) {
+                if (!e.target.closest('.notification-actions-item') &&
+                    !e.target.closest('.notification-link') &&
                     !notification.read) {
                     markNotificationAsRead(notification.id);
                 }
             });
-            
+
             return notificationDiv;
         }
-        
+
         // Get notification type icon
         function getNotificationTypeIcon(type) {
             const icons = {
@@ -750,13 +761,13 @@
             };
             return icons[type] || 'ℹ️';
         }
-        
+
         // Get human-readable time ago
         function getTimeAgo(timestamp) {
             const now = new Date();
             const notificationTime = new Date(timestamp);
             const diffInSeconds = Math.floor((now - notificationTime) / 1000);
-            
+
             if (diffInSeconds < 60) {
                 return 'Just now';
             } else if (diffInSeconds < 3600) {
@@ -772,7 +783,7 @@
                 return notificationTime.toLocaleDateString();
             }
         }
-        
+
         // Mark a specific notification as read
         function markNotificationAsRead(notificationId) {
             const notification = notificationsData.find(n => n.id === notificationId);
@@ -783,7 +794,7 @@
                 renderNotifications();
             }
         }
-        
+
         // Mark all notifications as read
         function markAllNotificationsAsRead() {
             notificationsData.forEach(notification => {
@@ -793,19 +804,19 @@
             updateNotificationCount();
             renderNotifications();
         }
-        
+
         // Dismiss a specific notification
         function dismissNotification(notificationId) {
             notificationsData = notificationsData.filter(n => n.id !== notificationId);
             updateNotificationCount();
             renderNotifications();
-            
+
             // Also remove from read notifications localStorage
             const readNotifications = JSON.parse(localStorage.getItem('festhub-read-notifications') || '[]');
             const updatedReadNotifications = readNotifications.filter(id => id !== notificationId);
             localStorage.setItem('festhub-read-notifications', JSON.stringify(updatedReadNotifications));
         }
-        
+
         // Clear all notifications
         function clearAllNotifications() {
             notificationsData = [];
@@ -813,27 +824,27 @@
             renderNotifications();
             localStorage.removeItem('festhub-read-notifications');
         }
-        
+
         // Toggle older notifications visibility
         function toggleOlderNotifications() {
             const content = olderNotificationsContent;
             const icon = olderNotificationsToggle.querySelector('i');
-            
+
             if (content.classList.contains('expanded')) {
                 content.classList.remove('expanded');
                 icon.classList.remove('fa-chevron-up');
                 icon.classList.add('fa-chevron-down');
-                olderNotificationsToggle.querySelector('span').textContent = 
+                olderNotificationsToggle.querySelector('span').textContent =
                     olderNotificationsToggle.querySelector('span').textContent.replace('Hide', 'Show');
             } else {
                 content.classList.add('expanded');
                 icon.classList.remove('fa-chevron-down');
                 icon.classList.add('fa-chevron-up');
-                olderNotificationsToggle.querySelector('span').textContent = 
+                olderNotificationsToggle.querySelector('span').textContent =
                     olderNotificationsToggle.querySelector('span').textContent.replace('Show', 'Hide');
             }
         }
-        
+
         // Save read notifications to localStorage
         function saveReadNotifications() {
             const readNotifications = notificationsData
@@ -841,34 +852,34 @@
                 .map(n => n.id);
             localStorage.setItem('festhub-read-notifications', JSON.stringify(readNotifications));
         }
-        
+
         // Show notification toast
         function showNotificationToast(notification) {
             toastTitle.textContent = notification.title;
             toastMessage.textContent = notification.message;
-            
+
             // Set icon based on type
             const iconElement = toastIcon.querySelector('i');
             toastIcon.className = `toast-icon ${notification.type}`;
-            
+
             const iconMap = {
                 'info': 'fas fa-info-circle',
                 'success': 'fas fa-check-circle',
                 'warning': 'fas fa-exclamation-triangle',
                 'error': 'fas fa-exclamation-circle'
             };
-            
+
             iconElement.className = iconMap[notification.type] || 'fas fa-bell';
-            
+
             // Show toast
             notificationToast.classList.add('show');
-            
+
             // Hide toast after 5 seconds
             setTimeout(() => {
                 notificationToast.classList.remove('show');
             }, 5000);
         }
-        
+
         // Start checking for new notifications (simulate real-time updates)
         function startNotificationChecking() {
             // Check every 30 seconds for new notifications
@@ -877,24 +888,24 @@
                     const response = await fetch('./notifications.json');
                     if (response.ok) {
                         const freshNotifications = await response.json();
-                        
+
                         // Check for new notifications
                         const currentIds = notificationsData.map(n => n.id);
                         const newNotifications = freshNotifications.filter(n => !currentIds.includes(n.id));
-                        
+
                         if (newNotifications.length > 0) {
                             // Add new notifications
                             notificationsData = [...newNotifications, ...notificationsData];
                             updateNotificationCount();
-                            
+
                             // Show toast for the most recent new notification
                             if (newNotifications.length > 0) {
-                                const latestNotification = newNotifications.sort((a, b) => 
+                                const latestNotification = newNotifications.sort((a, b) =>
                                     new Date(b.timestamp) - new Date(a.timestamp)
                                 )[0];
                                 showNotificationToast(latestNotification);
                             }
-                            
+
                             // Re-render if notification section is open
                             if (isNotificationSectionOpen) {
                                 renderNotifications();
@@ -906,20 +917,20 @@
                 }
             }, 30000); // Check every 30 seconds
         }
-        
+
         // Make functions globally accessible
         window.markNotificationAsRead = markNotificationAsRead;
         window.dismissNotification = dismissNotification;
         window.handleNotificationLink = handleNotificationLink;
-        
+
         // Handle notification link clicks
         function handleNotificationLink(event, link, notificationId) {
             event.preventDefault();
             event.stopPropagation();
-            
+
             // Mark notification as read when link is clicked
             markNotificationAsRead(notificationId);
-            
+
             // Handle different types of links
             if (link.startsWith('#')) {
                 // Internal anchor link
@@ -940,19 +951,19 @@
                 window.location.href = link;
             }
         }
-        
+
         // Show favorites modal
         function showFavoritesModal() {
             if (favorites.length === 0) {
                 alert('You haven\'t added any festivals to favorites yet!\n\nClick the heart icon on any festival card to add it to your favorites.');
                 return;
             }
-            
+
             const favoriteItems = favorites.map(fav => `• ${fav.title}`).join('\n');
             alert(`Your Favorite Festivals:\n\n${favoriteItems}`);
         }
 
-        
+
         // Add to favorites
         function addToFavorites(festival) {
             if (!favorites.find(f => f.id === festival.id)) {
@@ -963,21 +974,21 @@
             }
             return false;
         }
-        
+
         // Remove from favorites
         function removeFromFavorites(festivalId) {
             favorites = favorites.filter(f => f.id !== festivalId);
             localStorage.setItem('festhub-favorites', JSON.stringify(favorites));
             updateFavoritesCount();
         }
-        
+
         // Global toggle favorite function (called from card onclick)
         function toggleFavorite(festivalId) {
             const festival = websitesData.find(w => w.id === festivalId);
             if (!festival) return;
-            
+
             const favoriteBtn = document.querySelector(`[onclick="toggleFavorite(${festivalId})"]`);
-            
+
             if (favorites.find(f => f.id === festivalId)) {
                 removeFromFavorites(festivalId);
                 favoriteBtn.classList.remove('active');
@@ -988,52 +999,52 @@
                 favoriteBtn.title = 'Remove from favorites';
             }
         }
-        
+
         // Make toggleFavorite globally accessible
         window.toggleFavorite = toggleFavorite;
 
         // Perform search
         function performSearch() {
             currentSearch = searchInput.value.trim();
-            
+
             // Track search queries
             if (typeof gtag !== 'undefined' && currentSearch) {
                 gtag('event', 'search', {
                     'search_term': currentSearch
                 });
             }
-            
+
             renderWebsites();
         }
-        
+
         // Check for festivals happening today
         function checkTodayFestivals() {
             const today = new Date();
             const currentMonth = today.toLocaleString('default', { month: 'short' });
             const currentDay = today.getDate().toString();
-            
+
             const todaysFestivals = eventsData.filter(event => {
                 return event.day === currentDay && event.month === currentMonth;
             });
-            
+
             if (todaysFestivals.length > 0) {
                 // Show a popup for the first festival happening today
                 showFestivalModal(todaysFestivals[0]);
             }
         }
-        
+
         // Show festival modal
         function showFestivalModal(festival) {
             currentFestival = festival;
-            
+
             // Set modal content
             modalFestivalTitle.textContent = festival.title;
             modalFestivalDate.textContent = `${festival.day} ${festival.month} 2025`;
             modalFestivalDesc.textContent = festival.description;
-            
+
             // Set modal color based on category
             let bgColor = 'var(--primary)';
-            switch(festival.category) {
+            switch (festival.category) {
                 case 'hindu':
                     bgColor = 'var(--hindu)';
                     break;
@@ -1046,40 +1057,40 @@
                 case 'other':
                     bgColor = 'var(--other)';
             }
-            
+
             modalFestivalDate.style.background = bgColor;
             modalWishNow.style.background = bgColor;
-            
+
             // Show modal
             festivalModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        
+
         // Close festival modal
         function closeFestivalModal() {
             festivalModal.classList.remove('active');
             document.body.style.overflow = '';
         }
-        
+
         // Open review modal
         function openReviewModal() {
             reviewModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        
+
         // Close review modal
         function closeReviewModal() {
             reviewModal.classList.remove('active');
             document.body.style.overflow = '';
             resetReviewForm();
         }
-        
+
         // Set rating
         function setRating(rating) {
             currentRating = rating;
             highlightStars(rating);
         }
-        
+
         // Highlight stars up to the given rating
         function highlightStars(rating) {
             const stars = ratingStars.querySelectorAll('.rating-star');
@@ -1093,50 +1104,50 @@
                 }
             });
         }
-        
+
         // Reset review form
         function resetReviewForm() {
             currentRating = 0;
             highlightStars(0);
             reviewText.value = '';
         }
-        
+
         // Auto-scroll events
         function startAutoScroll() {
             // Clone the events to create a seamless loop
             const eventsContainer = eventsSlider;
             const events = Array.from(eventsContainer.children);
-            
+
             // Duplicate events for seamless looping
             events.forEach(event => {
                 const clone = event.cloneNode(true);
                 eventsContainer.appendChild(clone);
             });
-            
+
             let scrollAmount = 0;
             const scrollSpeed = 1; // pixels per interval
-            
+
             scrollInterval = setInterval(() => {
                 scrollAmount += scrollSpeed;
                 eventsContainer.scrollLeft = scrollAmount;
-                
+
                 // Reset scroll position when reaching the end
                 if (scrollAmount >= eventsContainer.scrollWidth / 2) {
                     scrollAmount = 0;
                     eventsContainer.scrollLeft = 0;
                 }
             }, 30);
-            
+
             // Pause on hover
             eventsContainer.addEventListener('mouseenter', () => {
                 clearInterval(scrollInterval);
             });
-            
+
             eventsContainer.addEventListener('mouseleave', () => {
                 scrollInterval = setInterval(() => {
                     scrollAmount += scrollSpeed;
                     eventsContainer.scrollLeft = scrollAmount;
-                    
+
                     // Reset scroll position when reaching the end
                     if (scrollAmount >= eventsContainer.scrollWidth / 2) {
                         scrollAmount = 0;
@@ -1146,7 +1157,7 @@
             });
         }
     </script>
-    
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -1170,7 +1181,7 @@
       }
     }
     </script>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1187,14 +1198,15 @@
       }]
     }
     </script>
-    
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHQ34PSHTY"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-LHQ34PSHTY'); // Replace with your GA4 ID
     </script>
 </body>
+
 </html>
