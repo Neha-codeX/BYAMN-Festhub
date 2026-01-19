@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Makar Sankranti 🪁</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#ff9800;
+    --secondary:#f44336;
+    --accent:#ffeb3b;
+    --bg:#fff8e1;
+    --dark:#6d2c00;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:Poppins,sans-serif;
+    background:linear-gradient(to bottom,#fff3cd,#ffe082);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Header */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    background:rgba(255,152,0,.15);
+    backdrop-filter:blur(6px);
+}
+header h1{
+    font-family:Kalam;
+    color:var(--dark);
+}
+.btn-create{
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* Floating decor */
+.floating{
+    position:absolute;
+    font-size:40px;
+    opacity:.2;
+    animation:float 8s infinite linear;
+}
+.f1{top:15%;left:10%}
+.f2{top:60%;right:10%;animation-duration:10s}
+@keyframes float{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-30px)}
+    100%{transform:translateY(0)}
+}
+
+/* Main */
+.main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px 15px;
+}
+
+/* Form */
+.form-box{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    width:100%;
+    max-width:360px;
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+.form-box h2{text-align:center;margin-bottom:15px}
+.input-group{
+    position:relative;
+    margin-bottom:20px;
+}
+.input-group input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+.btn-generate{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* Card */
+.card{
+    display:none;
+    background:#fff;
+    border-radius:25px;
+    padding:25px;
+    max-width:380px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+    animation:pop .6s ease;
+}
+@keyframes pop{
+    from{transform:scale(.7);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+.card h2{
+    font-family:Kalam;
+    color:var(--secondary);
+}
+.card img{
+    width:100%;
+    border-radius:20px;
+    margin:15px 0;
+}
+.wish{
+    font-size:15px;
+    margin:10px 0;
+}
+.sender{
+    font-weight:700;
+    margin:10px 0;
+}
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+.actions a{
+    flex:1;
+    text-decoration:none;
+    padding:10px;
+    border-radius:30px;
+    font-weight:600;
+    color:#fff;
+}
+.share{background:#25d366}
+.new{background:#ff9800}
+
+/* Modal */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    justify-content:center;
+    align-items:center;
+}
+.modal-content{
+    background:#fff;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    width:300px;
+}
+.share-icons{
+    display:flex;
+    justify-content:space-around;
+    margin:15px 0;
+}
+.share-icons i{
+    font-size:30px;
+    cursor:pointer;
+}
+footer{
+    margin-top:30px;
+    opacity:.7;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Happy Makar Sankranti 🪁</h1>
+<button class="btn-create" onclick="resetAll()">Create</button>
+</header>
+
+<i class="fas fa-kite floating f1"></i>
+<i class="fas fa-sun floating f2"></i>
+
+<div class="main">
+
+<div class="form-box" id="form">
+<h2>Create Your Greeting</h2>
+<div class="input-group">
+<input id="name" placeholder="Enter your name">
+</div>
+<button class="btn-generate" onclick="generate()">Generate</button>
+</div>
+
+<div class="card" id="card">
+<h2>Happy Makar Sankranti</h2>
+<img id="img" src="">
+<p class="wish" id="wish"></p>
+<div class="sender" id="sender"></div>
+<p>May the sun bring success, joy & prosperity 🌞</p>
+<div class="actions">
+<a href="#" class="share" onclick="openModal()">Share</a>
+<a href="#" class="new" onclick="resetAll()">New</a>
+</div>
+</div>
+
+<footer>© 2025 Makar Sankranti Greetings</footer>
+</div>
+
+<!-- Share Modal -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<h3>Share Greeting</h3>
+<div class="share-icons">
+<i class="fab fa-whatsapp" onclick="share('wa')"></i>
+<i class="fab fa-facebook" onclick="share('fb')"></i>
+<i class="fab fa-x-twitter" onclick="share('tw')"></i>
+<i class="fas fa-link" onclick="copyLink()"></i>
+</div>
+<button onclick="closeModal()">Close</button>
+</div>
+</div>
+
+<script>
+const images=[
+ "https://images.unsplash.com/photo-1542718610-a1d656d1884c",
+ "https://images.unsplash.com/photo-1612979022617-21d62e49d1c2",
+ "https://images.unsplash.com/photo-1609505848912-b7c3b9d1e6b4"
+];
+const wishes=[
+ "May this Sankranti bring new hopes and happiness.",
+ "Let your dreams fly high like colorful kites.",
+ "Warm wishes for prosperity and good health.",
+ "Celebrate harvest, sunshine, and positivity.",
+ "New beginnings, sweet moments, and success."
+];
+
+function generate(){
+ const name=document.getElementById("name").value.trim();
+ if(!name){alert("Enter your name");return}
+ document.getElementById("form").style.display="none";
+ document.getElementById("card").style.display="block";
+ document.getElementById("img").src=images[Math.floor(Math.random()*images.length)];
+ document.getElementById("wish").innerText=wishes[Math.floor(Math.random()*wishes.length)];
+ document.getElementById("sender").innerText="— "+name;
+ history.replaceState(null,"",`?name=${encodeURIComponent(name)}`);
+}
+function resetAll(){
+ location.href=location.pathname;
+}
+function openModal(){document.getElementById("modal").style.display="flex"}
+function closeModal(){document.getElementById("modal").style.display="none"}
+function share(type){
+ const url=location.href;
+ let link="";
+ if(type==="wa")link=`https://wa.me/?text=${encodeURIComponent(url)}`;
+ if(type==="fb")link=`https://www.facebook.com/sharer/sharer.php?u=${url}`;
+ if(type==="tw")link=`https://twitter.com/intent/tweet?url=${url}`;
+ window.open(link,"_blank");
+}
+function copyLink(){
+ navigator.clipboard.writeText(location.href);
+ alert("Link copied!");
+}
+</script>
+
+</body>
+</html>
