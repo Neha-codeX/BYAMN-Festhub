@@ -29,7 +29,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 5%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
 }
@@ -41,7 +41,7 @@ header h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-create {
@@ -74,14 +74,14 @@ header h1 {
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-home:hover {
     background: var(--primary);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-create:hover {
@@ -98,15 +98,16 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 30px 20px;
     perspective: 1000px;
 }
 
-.form-box, .greeting-card {
+.form-box,
+.greeting-card {
     background: white;
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     width: 100%;
     max-width: 500px;
     padding: 30px;
@@ -180,7 +181,7 @@ input {
     border: 2px solid #e0e0e0;
     font-size: 16px;
     transition: all 0.3s ease;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 input:focus {
@@ -200,7 +201,8 @@ label {
     padding: 0 5px;
 }
 
-input:focus + label, input:not(:placeholder-shown) + label {
+input:focus+label,
+input:not(:placeholder-shown)+label {
     top: -10px;
     left: 15px;
     font-size: 12px;
@@ -234,7 +236,7 @@ input:focus + label, input:not(:placeholder-shown) + label {
     border-radius: 15px;
     object-fit: cover;
     margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -272,7 +274,8 @@ input:focus + label, input:not(:placeholder-shown) + label {
     line-height: 1.5;
 }
 
-.action-btns {
+.action-btns,
+.card-actions {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -280,7 +283,8 @@ input:focus + label, input:not(:placeholder-shown) + label {
     margin-top: 25px;
 }
 
-.action-btn {
+.action-btn,
+.card-actions button {
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 600;
@@ -290,6 +294,8 @@ input:focus + label, input:not(:placeholder-shown) + label {
     gap: 8px;
     transition: all 0.3s ease;
     font-size: 14px;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-share {
@@ -302,7 +308,13 @@ input:focus + label, input:not(:placeholder-shown) + label {
     background: white;
     color: var(--primary);
     border: 2px solid var(--primary);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
 }
 
 .action-btn:hover {
@@ -313,8 +325,12 @@ input:focus + label, input:not(:placeholder-shown) + label {
     box-shadow: 0 7px 20px rgba(211, 84, 0, 0.4);
 }
 
+.btn-download:hover {
+    box-shadow: 0 7px 20px rgba(39, 174, 96, 0.4);
+}
+
 .btn-new:hover {
-    box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
 }
 
 .floating-decor {
@@ -343,7 +359,7 @@ input:focus + label, input:not(:placeholder-shown) + label {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -407,17 +423,28 @@ input:focus + label, input:not(:placeholder-shown) + label {
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .share-option:hover {
     transform: translateY(-5px) scale(1.1);
 }
 
-.whatsapp { background: #25D366; }
-.facebook { background: #3b5998; }
-.twitter { background: #1DA1F2; }
-.copy-link { background: var(--primary); }
+.whatsapp {
+    background: #25D366;
+}
+
+.facebook {
+    background: #3b5998;
+}
+
+.twitter {
+    background: #1DA1F2;
+}
+
+.copy-link {
+    background: var(--primary);
+}
 
 .share-url {
     margin-top: 20px;
@@ -463,7 +490,7 @@ input:focus + label, input:not(:placeholder-shown) + label {
     position: relative;
     overflow: hidden;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .ad-wrapper iframe {
@@ -481,8 +508,7 @@ footer {
     padding: 15px 0;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 0;
+    margin-top: auto;
     width: 100%;
 }
 
@@ -508,40 +534,42 @@ footer {
     header h1 {
         font-size: 36px;
     }
-    
+
     .btn-create {
         padding: 8px 15px;
         font-size: 13px;
     }
-    
-    .form-box, .greeting-card {
+
+    .form-box,
+    .greeting-card {
         padding: 25px 20px;
     }
-    
+
     h2 {
         font-size: 24px;
     }
-    
+
     .greeting-image {
         height: 200px;
     }
-    
+
     .greeting-text {
         font-size: 18px;
     }
-    
+
     .sender-name {
         font-size: 32px;
     }
-    
+
     .festival-wish {
         font-size: 16px;
     }
-    
+
     .ad-wrapper {
         max-width: 100%;
         padding: 0 10px;
     }
+
     .ad-wrapper iframe {
         height: 50px !important;
         transform: scale(1);

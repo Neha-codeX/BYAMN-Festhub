@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Holi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Tangerine:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Tangerine:wght@700&family=Kalam:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/festival.css">
     <style>
         :root {
@@ -16,13 +19,14 @@
             --light: #fce4ec;
             --dark: #880e4f;
         }
-        
+
         .floating-decor i {
             color: var(--primary);
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <h1>Happy Holi</h1>
@@ -46,7 +50,7 @@
                 </div>
                 <h2>Share Your Greeting</h2>
                 <p>Spread the colors of joy with your friends and family!</p>
-                
+
                 <div class="share-options">
                     <div class="share-option whatsapp" id="whatsappShare">
                         <i class="fab fa-whatsapp"></i>
@@ -61,14 +65,14 @@
                         <i class="fas fa-copy"></i>
                     </div>
                 </div>
-                
+
                 <div class="share-url">
                     <input type="text" id="shareUrlInput" readonly>
                     <button id="copyUrlBtn">Copy</button>
                 </div>
             </div>
         </div>
-        
+
         <div class="form-box" id="formBox">
             <h2>Create Your Greeting</h2>
             <div class="input-group">
@@ -79,19 +83,22 @@
                 Generate Greeting
             </button>
         </div>
-        
+
         <div class="greeting-card" id="greetingCard">
             <h2>Happy Holi</h2>
             <img class="greeting-image" id="greetingImage" src="" alt="Holi Image">
-            
+
             <p class="greeting-text" id="randomWish"></p>
-            
+
             <p class="wishing-you">Wishing You</p>
             <h3 class="sender-name" id="senderName"></h3>
-            
+
             <div class="card-actions">
                 <button class="btn-share" id="shareBtn">
                     <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button class="btn-download" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download
                 </button>
                 <button class="btn-new" id="newCardBtn">
                     <i class="fas fa-redo"></i> Create New
@@ -102,7 +109,7 @@
 
     <script>
         const images = [
-            "images/Holi.jpg"
+            "images/Holi.png"
         ];
 
         const wishes = [
@@ -115,4 +122,5 @@
     </script>
     <script src="js/festival.js"></script>
 </body>
+
 </html>
